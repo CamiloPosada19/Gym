@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_DEV_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs dev --host",
-    "start": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_DEV_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs dev --host",
-    "build": "ASTRO_TELEMETRY_DISABLED=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs build",
-    "preview": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_PREVIEW_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs preview --host"
+    "dev": "astro dev --host",
+    "start": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host"
   },
   "keywords": [
     "judo",
