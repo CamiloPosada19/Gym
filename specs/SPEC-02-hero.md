@@ -16,7 +16,7 @@
 
 3. **Acción Principal (CTA WhatsApp):**
    - **Dado** que el usuario hace clic en el botón principal "Solicitar Clase de Prueba",
-   - **Entonces** el navegador abre en una pestaña nueva la URL de WhatsApp (`https://wa.me/34634251393`) con el mensaje codificado solicitando información de horarios y clase de prueba sin compromiso.
+   - **Entonces** el navegador abre en una pestaña nueva la URL de WhatsApp (`https://wa.me/34600000000`) con el mensaje codificado solicitando información de horarios y clase de prueba sin compromiso.
 
 4. **Acción Secundaria:**
    - **Dado** que el usuario hace clic en "Ver Horarios de Clases",

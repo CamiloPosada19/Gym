@@ -28,4 +28,4 @@
 
 5. **CTA WhatsApp Circular en Navbar:**
    - **Dado** que un usuario pulsa el botón circular de WhatsApp en la cabecera (en escritorio o móvil),
-   - **Entonces** se abre en una nueva pestaña el enlace oficial `https://wa.me/34634251393` con el texto predeterminado de solicitud de información para la apertura.
+   - **Entonces** se abre en una nueva pestaña el enlace oficial `https://wa.me/34600000000` con el texto predeterminado de solicitud de información para la apertura.

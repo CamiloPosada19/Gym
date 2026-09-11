@@ -19,7 +19,7 @@
      - Construye dinámicamente el mensaje:
        `¡Hola Salva, Carlos y Mirco! Me llamo Alejandro Gómez. Quiero consultar horarios y probar una clase en CHIDAOBA en "[Disciplina Seleccionada]". Mi nivel de partida es: "[Nivel Seleccionado]". ¿Cuándo podría pasarme por el tatami? ¡Un saludo!`
      - Codifica la cadena mediante `encodeURIComponent`.
-     - Abre una nueva ventana o pestaña del navegador apuntando a `https://wa.me/34634251393?text=[payload]`.
+     - Abre una nueva ventana o pestaña del navegador apuntando a `https://wa.me/34600000000?text=[payload]`.
 
 3. **Despliegue de los 6 Beneficios de Entrenar en Chidaoba:**
    - **Dado** el panel lateral de ventajas,
