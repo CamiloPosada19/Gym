@@ -6,13 +6,13 @@ interface Props {
 
 const { className = "" } = Astro.props;
 
-// Cálculo inicial en el servidor para el 1 de octubre
+// Cálculo en servidor con zona horaria de España (CEST: UTC+2)
+// Apertura oficial: 1 de octubre a las 00:00:00 en Alicante (España)
 const now = new Date();
 const currentYear = now.getFullYear();
-// 1 de octubre: mes 9 en JavaScript (0-indexed: Enero=0 ... Octubre=9) a las 00:00:00
-let targetDate = new Date(currentYear, 9, 1, 0, 0, 0);
+let targetDate = new Date(`${currentYear}-10-01T00:00:00+02:00`);
 if (now.getTime() >= targetDate.getTime()) {
-  targetDate = new Date(currentYear + 1, 9, 1, 0, 0, 0);
+  targetDate = new Date(`${currentYear + 1}-10-01T00:00:00+02:00`);
 }
 
 const diffMs = Math.max(0, targetDate.getTime() - now.getTime());
@@ -105,9 +105,9 @@ const targetIsoString = targetDate.toISOString();
       }
       var now = new Date();
       var currentYear = now.getFullYear();
-      var target = new Date(currentYear, 9, 1, 0, 0, 0); // 1 de octubre
+      var target = new Date(currentYear + '-10-01T00:00:00+02:00');
       if (now.getTime() >= target.getTime()) {
-        target = new Date(currentYear + 1, 9, 1, 0, 0, 0);
+        target = new Date((currentYear + 1) + '-10-01T00:00:00+02:00');
       }
       return target;
     }
@@ -115,7 +115,7 @@ const targetIsoString = targetDate.toISOString();
     var targetDate = getTargetDate();
 
     function updateTimer() {
-      var now = new Date().getTime();
+      var now = Date.now();
       var distance = targetDate.getTime() - now;
 
       var elDays = document.getElementById('cd-days');
@@ -123,11 +123,13 @@ const targetIsoString = targetDate.toISOString();
       var elMinutes = document.getElementById('cd-minutes');
       var elSeconds = document.getElementById('cd-seconds');
 
+      if (!elDays || !elHours || !elMinutes || !elSeconds) return;
+
       if (distance <= 0) {
-        if (elDays) elDays.textContent = '00';
-        if (elHours) elHours.textContent = '00';
-        if (elMinutes) elMinutes.textContent = '00';
-        if (elSeconds) elSeconds.textContent = '00';
+        elDays.textContent = '00';
+        elHours.textContent = '00';
+        elMinutes.textContent = '00';
+        elSeconds.textContent = '00';
         return;
       }
 
@@ -136,13 +138,26 @@ const targetIsoString = targetDate.toISOString();
       var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      if (elDays) elDays.textContent = String(days).padStart(2, '0');
-      if (elHours) elHours.textContent = String(hours).padStart(2, '0');
-      if (elMinutes) elMinutes.textContent = String(minutes).padStart(2, '0');
-      if (elSeconds) elSeconds.textContent = String(seconds).padStart(2, '0');
+      elDays.textContent = String(days).padStart(2, '0');
+      elHours.textContent = String(hours).padStart(2, '0');
+      elMinutes.textContent = String(minutes).padStart(2, '0');
+      elSeconds.textContent = String(seconds).padStart(2, '0');
     }
 
+    // Ejecutar inmediatamente para corregir cualquier valor estático de SSR/SSG
     updateTimer();
-    setInterval(updateTimer, 1000);
+
+    // Iniciar intervalo de actualización en vivo cada segundo
+    var timerInterval = setInterval(updateTimer, 1000);
+
+    // Resincronizar cuando la página termine de cargar o la pestaña vuelva a estar activa
+    document.addEventListener('DOMContentLoaded', updateTimer);
+    window.addEventListener('pageshow', updateTimer);
+    window.addEventListener('focus', updateTimer);
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) {
+        updateTimer();
+      }
+    });
   })();
 </script>
