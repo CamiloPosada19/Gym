@@ -1,0 +1,738 @@
+---
+// src/components/ScheduleFAQ.astro
+
+const whatsappNumber = "34600000000";
+
+const times = ["09:30", "10:00", "15:00", "17:30", "18:30", "19:30", "20:45"];
+
+const daysData = [
+  {
+    id: "lunes",
+    name: "Lunes",
+    shortName: "LUN",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Warm Up", icon: "✋" },
+      "10:00": { name: "BJJ GI", type: "bjj-gi", label: "BJJ Todos los Niveles", icon: "🥋" },
+      "15:00": null,
+      "17:30": { name: "CHIDAOBA KIDS", type: "kids", label: "Judo Infantil (4-9 años)", icon: "👶" },
+      "18:30": { name: "CHIDAOBA JUNIORS", type: "kids", label: "Judo Juvenil (10-15 años)", icon: "🥋" },
+      "19:30": { name: "NOGI", type: "nogi", label: "Submission Grappling", icon: "🤼" },
+      "20:45": { name: "JUDO OLÍMPICO", type: "judo", label: "Adultos & Competición (Salva Cases)", icon: "🥋" },
+    }
+  },
+  {
+    id: "martes",
+    name: "Martes",
+    shortName: "MAR",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Warm Up", icon: "✋" },
+      "10:00": { name: "JUDO OLÍMPICO", type: "judo", label: "Tachi-Waza & Kumi-Kata", icon: "🥋" },
+      "15:00": { name: "BJJ GI", type: "bjj-gi", label: "BJJ Turno Mediodía", icon: "🥋" },
+      "17:30": { name: "JUDO BASE", type: "kids", label: "Psicomotricidad & Caídas Seguras", icon: "👶" },
+      "18:30": { name: "BJJ FEMENINO", type: "femenino", label: "Grupo Exclusivo Femenino", icon: "👩" },
+      "19:30": { name: "BJJ GI", type: "bjj-gi", label: "BJJ Técnica & Sparring", icon: "🥋" },
+      "20:45": { name: "NE-WAZA MASTER", type: "judo", label: "Judo Suelo & Transiciones", icon: "🥋" },
+    }
+  },
+  {
+    id: "miercoles",
+    name: "Miércoles",
+    shortName: "MIÉ",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Warm Up", icon: "✋" },
+      "10:00": { name: "NOGI", type: "nogi", label: "Grappling & Lucha Suelo", icon: "🤼" },
+      "15:00": null,
+      "17:30": { name: "CHIDAOBA KIDS", type: "kids", label: "Judo Infantil (4-9 años)", icon: "👶" },
+      "18:30": { name: "JUDO TÉCNICO", type: "judo", label: "Perfeccionamiento Marcial", icon: "🥋" },
+      "19:30": { name: "BJJ GI", type: "bjj-gi", label: "BJJ con Kimono", icon: "🥋" },
+      "20:45": { name: "JUDO OLÍMPICO", type: "judo", label: "Adultos & Randori (Hnos. Cases)", icon: "🥋" },
+    }
+  },
+  {
+    id: "jueves",
+    name: "Jueves",
+    shortName: "JUE",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Warm Up", icon: "✋" },
+      "10:00": { name: "JUDO OLÍMPICO", type: "judo", label: "Derribos & Kuzushi Biomecánico", icon: "🥋" },
+      "15:00": { name: "BJJ GI", type: "bjj-gi", label: "BJJ Turno Mediodía", icon: "🥋" },
+      "17:30": { name: "JUDO BASE", type: "kids", label: "Psicomotricidad & Caídas Seguras", icon: "👶" },
+      "18:30": { name: "BJJ FUNDAMENTALS", type: "bjj-gi", label: "Iniciación Adultos", icon: "🥋" },
+      "19:30": { name: "NOGI", type: "nogi", label: "Submission Grappling", icon: "🤼" },
+      "20:45": { name: "JUDO RANDORI", type: "judo", label: "Combates & Táctica de Élite", icon: "🥋" },
+    }
+  },
+  {
+    id: "viernes",
+    name: "Viernes",
+    shortName: "VIE",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Warm Up", icon: "✋" },
+      "10:00": { name: "BJJ GI", type: "bjj-gi", label: "BJJ con Kimono", icon: "🥋" },
+      "15:00": null,
+      "17:30": { name: "CHIDAOBA JUNIORS", type: "kids", label: "Judo Juvenil (10-15 años)", icon: "🥋" },
+      "18:30": { name: "BJJ GI", type: "bjj-gi", label: "BJJ Técnica & Roll", icon: "🥋" },
+      "19:30": { name: "OPEN MAT CHIDAOBA", type: "nogi", label: "Roll & Sparring Supervisado", icon: "🤼" },
+      "20:45": { name: "GRAPPLING & LUCHA", type: "judo", label: "Competición & Táctica Multidisciplinar", icon: "🤼" },
+    }
+  },
+  {
+    id: "sabado",
+    name: "Sábado",
+    shortName: "SÁB",
+    slots: {
+      "09:30": { name: "TATAMI ABIERTO", type: "tatami", label: "Tatami Abierto & Calentamiento", icon: "✋" },
+      "10:00": { name: "MASTERCLASS JUDO", type: "judo", label: "Hermanos Cases (Olímpico)", icon: "🏆" },
+      "15:00": null,
+      "17:30": null,
+      "18:30": { name: "OPEN MAT SOCIAL", type: "nogi", label: "Comunidad Chidaoba (Judo & BJJ)", icon: "🤼" },
+      "19:30": null,
+      "20:45": null,
+    }
+  }
+];
+
+const faqs = [
+  {
+    q: "¿Por qué el club se llama 'Chidaoba'?",
+    a: "'Chidaoba' es el nombre del estilo tradicional de lucha de Georgia, famoso por sus agarres dinámicos y derribos que enriquecieron al judo moderno. Es la denominación elegida por la familia Cases para este proyecto de artes marciales en Alicante, integrando Judo Olímpico de élite, Brazilian Jiu-Jitsu (BJJ) con Mirco Biscarini y acondicionamiento marcial avanzado.",
+    qKey: "faqs.q1",
+    aKey: "faqs.a1"
+  },
+  {
+    q: "¿Cuáles son los horarios de las clases y cómo puedo empezar?",
+    a: "Ofrecemos clases distribuidas en turnos de mañana (09:30 Tatami Abierto y 10:00 Judo Olímpico / BJJ Gi / No-Gi), mediodía (15:00 BJJ), tarde para niños y jóvenes (17:30 y 18:30 Judo Kids & Juniors y BJJ Femenino) y noche para adultos y competición (19:30 y 20:45 Judo Olímpico y No-Gi). ¡Tu primera clase de prueba es 100% gratis! Escríbenos por WhatsApp para reservar tu hueco en el horario que prefieras.",
+    qKey: "faqs.q2",
+    aKey: "faqs.a2"
+  },
+  {
+    q: "¿Quién imparte las clases de Judo y quién las de BJJ?",
+    a: "Las clases de Judo Olímpico e infantil están dirigidas personalmente por Salvador Cases (Olímpico en París 2024 y Subcampeón de Europa) y Carlos Cases (Maestro Nacional y Campeón de España en todas las categorías). Las clases de Brazilian Jiu-Jitsu están lideradas por Mirco Biscarini (@mibisjj), Cinturón Negro y Campeón de Europa de BJJ (Team Kong / Team Kurama).",
+    qKey: "faqs.q3",
+    aKey: "faqs.a3"
+  },
+  {
+    q: "¿Puedo entrenar tanto Judo como BJJ con la misma cuota?",
+    a: "¡Sí! Disponemos de tarifa plana combinada ilimitada para que puedas entrenar indistintamente tanto Judo Olímpico como Brazilian Jiu-Jitsu (con Gi y No-Gi Grappling), además de acceso libre a todas las sesiones de Tatami Abierto, Open Mat y la zona de fuerza y acondicionamiento.",
+    qKey: "faqs.q4",
+    aKey: "faqs.a4"
+  },
+  {
+    q: "¿Puedo empezar desde cero si nunca he hecho artes marciales?",
+    a: "¡Por supuesto! El 70% de nuestros alumnos comienzan sin experiencia marcial previa. Nuestro método de enseñanza progresivo prioriza aprender a caer con seguridad (ukemi), el control biomecánico y el respeto entre compañeros, para disfrutar desde el primer día sin riesgo de lesiones.",
+    qKey: "faqs.q5",
+    aKey: "faqs.a5"
+  },
+  {
+    q: "¿Dónde está ubicado el club en Alicante?",
+    a: "Estamos en la Calle de Perú, 14 (Planta G), 03008 Alicante. Una ubicación excelente, con fácil acceso, zona de aparcamiento y muy buenas conexiones de transporte público.",
+    qKey: "faqs.q6",
+    aKey: "faqs.a6"
+  }
+];
+---
+
+<section id="horarios" class="py-20 md:py-28 relative bg-[#050505] border-t border-white/10 overflow-hidden">
+  <div id="faq" class="absolute -top-20"></div>
+
+  <!-- Ambient lighting -->
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-red-600/[0.07] blur-[180px] rounded-full pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header matching poster aesthetic with subtle BJJ logos -->
+    <div class="text-center max-w-4xl mx-auto mb-12 space-y-4">
+      
+      <!-- Top Affiliation Logos (Team Kurama Left | Team Kong Right) -->
+      <div class="flex items-center justify-between sm:justify-center sm:gap-8 md:gap-14 mb-2 px-2">
+        <!-- Left Logo: Team Kurama (Subtle) -->
+        <div class="flex items-center gap-2.5 group">
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo_team_kurama.png`}
+            alt="Logo Team Kurama Brazilian Jiu-Jitsu"
+            class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(220,38,38,0.35)] opacity-85 group-hover:opacity-100 transition-all duration-300"
+            loading="lazy"
+          />
+          <div class="hidden sm:block text-left">
+            <span class="block text-[11px] font-black uppercase tracking-wider text-red-500 font-display">TEAM KURAMA</span>
+            <span class="block text-[10px] text-zinc-400 font-medium">BJJ Affiliate</span>
+          </div>
+        </div>
+
+        <!-- Center Badge -->
+        <div class="flex flex-col items-center">
+          <div data-i18n="schedule.badge" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-red-600 text-white shadow-lg shadow-red-600/30">
+            PLANIFICA TU SEMANA
+          </div>
+        </div>
+
+        <!-- Right Logo: Team Kong (Subtle) -->
+        <div class="flex items-center gap-2.5 group">
+          <div class="hidden sm:block text-right">
+            <span class="block text-[11px] font-black uppercase tracking-wider text-white font-display">TEAM KONG</span>
+            <span class="block text-[10px] text-zinc-400 font-medium">Jiu-Jitsu Academy</span>
+          </div>
+          <img
+            src={`${import.meta.env.BASE_URL}images/logo_team_kong.png`}
+            alt="Logo Team Kong Brazilian Jiu-Jitsu"
+            class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.15)] opacity-85 group-hover:opacity-100 transition-all duration-300"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display text-white tracking-tight uppercase">
+        <span data-i18n="schedule.title">HORARIOS OFICIALES</span> <span class="text-silver-gradient">CHIDAOBA</span>
+      </h2>
+
+      <p data-i18n="schedule.subtitle" class="text-sm sm:text-base md:text-lg text-zinc-300 font-medium tracking-wide">
+        Clases de Judo Olímpico, Brazilian Jiu-Jitsu (Gi & No-Gi), Kids y Tatami Abierto de Lunes a Sábado dirigidas por Salvador Cases, Carlos Cases y Mirco Biscarini.
+      </p>
+
+      <!-- Affiliation Tagline matching the poster footer -->
+      <div class="pt-1 flex items-center justify-center">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-[11px] sm:text-xs font-bold tracking-wider text-zinc-300 uppercase">
+          <span class="text-red-500 font-black">🥋</span>
+          <span>Kong Jiu-Jitsu Academy · Team Kurama Affiliate</span>
+        </span>
+      </div>
+
+      <!-- Subtitle badge: First class free -->
+      <div data-i18n-html="schedule.badgeTrial" class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/15 text-xs text-zinc-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <strong class="text-white">Empieza hoy</strong> · Tu primera clase es 100% gratis
+      </div>
+    </div>
+
+    <!-- Filter Pills / Categories -->
+    <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8">
+      <button
+        type="button"
+        data-filter="all"
+        data-i18n="schedule.filterAll"
+        class="filter-pill active px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all bg-red-600 text-white shadow-lg shadow-red-600/30"
+      >
+        Todas las Clases
+      </button>
+      <button
+        type="button"
+        data-filter="judo"
+        data-i18n="schedule.filterJudo"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        🥋 Judo Olímpico
+      </button>
+      <button
+        type="button"
+        data-filter="bjj-gi"
+        data-i18n="schedule.filterBjjGi"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        🥋 BJJ Gi
+      </button>
+      <button
+        type="button"
+        data-filter="nogi"
+        data-i18n="schedule.filterNoGi"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        🤼 No-Gi
+      </button>
+      <button
+        type="button"
+        data-filter="kids"
+        data-i18n="schedule.filterKids"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        👶 Judo Kids & Juniors
+      </button>
+      <button
+        type="button"
+        data-filter="femenino"
+        data-i18n="schedule.filterWomen"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        👩 BJJ Femenino
+      </button>
+      <button
+        type="button"
+        data-filter="tatami"
+        data-i18n="schedule.filterOpenMat"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+      >
+        ✋ Tatami Abierto
+      </button>
+    </div>
+
+    <!-- Mobile View Switcher (Visible on small screens) -->
+    <div class="flex sm:hidden items-center justify-center gap-2 mb-6">
+      <div class="bg-zinc-900/90 p-1 rounded-2xl border border-white/15 flex items-center shadow-inner">
+        <button
+          id="btn-view-day"
+          type="button"
+          data-i18n="schedule.viewDay"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider transition-all bg-red-600 text-white shadow-md"
+        >
+          📱 Vista por Día
+        </button>
+        <button
+          id="btn-view-table"
+          type="button"
+          data-i18n="schedule.viewTable"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-zinc-400 hover:text-white"
+        >
+          🗓️ Tabla Semanal
+        </button>
+      </div>
+    </div>
+
+    <!-- MOBILE DAY-BY-DAY VIEW (Default on mobile) -->
+    <div id="mobile-day-view" class="block sm:hidden mb-12 relative overflow-hidden">
+      <!-- Subtle Mobile Background Watermarks -->
+      <div class="absolute -left-10 top-24 w-44 h-44 pointer-events-none opacity-[0.05] select-none z-0">
+        <img src={`${import.meta.env.BASE_URL}images/logo_team_kurama.png`} alt="" class="w-full h-full object-contain" />
+      </div>
+      <div class="absolute -right-10 bottom-16 w-44 h-44 pointer-events-none opacity-[0.05] select-none z-0">
+        <img src={`${import.meta.env.BASE_URL}images/logo_team_kong.png`} alt="" class="w-full h-full object-contain" />
+      </div>
+
+      <!-- Day selector tabs -->
+      <div class="grid grid-cols-6 gap-1 mb-4 p-1 rounded-2xl bg-black/60 border border-white/15 relative z-10">
+        {daysData.map((d, index) => (
+          <button
+            type="button"
+            data-day-tab={d.id}
+            class={`day-tab-btn py-2 text-center rounded-xl transition-all ${
+              index === 0 
+                ? 'bg-red-600 text-white font-black shadow-md' 
+                : 'text-zinc-400 font-bold hover:text-white'
+            }`}
+          >
+            <span class="block text-xs uppercase tracking-tighter">{d.shortName}</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Day content cards -->
+      {daysData.map((d, index) => (
+        <div
+          id={`day-panel-${d.id}`}
+          class={`day-panel space-y-3 ${index === 0 ? 'block' : 'hidden'}`}
+        >
+          <div class="flex items-center justify-between pb-2 border-b border-white/10">
+            <h3 class="text-xl font-black text-white uppercase font-display flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
+              {d.name}
+            </h3>
+            <span data-i18n="schedule.slotsCount" class="text-xs text-zinc-400">7 franjas horarias</span>
+          </div>
+
+          <div class="space-y-2.5">
+            {times.map(t => {
+              const slot = d.slots[t as keyof typeof d.slots];
+              if (!slot) {
+                return (
+                  <div class="flex items-center justify-between p-3 rounded-2xl bg-white/[0.01] border border-white/5 text-zinc-600 text-xs">
+                    <span class="font-mono font-bold">{t}</span>
+                    <span data-i18n="schedule.noClass" class="text-[11px] italic">Sin sesión programada</span>
+                  </div>
+                );
+              }
+
+              const isFemenino = slot.type === 'femenino';
+              const isBJJGi = slot.type === 'bjj-gi';
+              const isNoGi = slot.type === 'nogi';
+              const isJudo = slot.type === 'judo';
+              const isKids = slot.type === 'kids';
+
+              const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar una clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
+
+              return (
+                <div
+                  data-slot-type={slot.type}
+                  class={`schedule-card-mobile p-4 rounded-2xl flex items-center justify-between gap-3 transition-all ${
+                    isFemenino 
+                      ? 'bg-gradient-to-r from-red-700 via-red-600 to-red-800 text-white border-2 border-red-400 shadow-lg shadow-red-600/40' 
+                      : isBJJGi
+                        ? 'bg-white text-zinc-950 font-black shadow-lg border border-white'
+                        : isJudo
+                          ? 'bg-gradient-to-r from-[#0d1e3d] to-[#081226] text-white border border-blue-400/50 shadow-md shadow-blue-950/40'
+                          : isKids
+                            ? 'bg-gradient-to-r from-[#1c1d24] to-[#12131a] text-white border border-amber-500/40 shadow-md'
+                            : isNoGi
+                              ? 'bg-zinc-900 text-white border border-white/25 shadow-md'
+                              : 'bg-white/[0.04] text-zinc-200 border border-white/15'
+                  }`}
+                >
+                  <div class="flex items-center gap-3">
+                    <div class={`px-2.5 py-1.5 rounded-xl font-mono text-sm font-black ${
+                      isBJJGi 
+                        ? 'bg-black text-white' 
+                        : isFemenino 
+                          ? 'bg-black/40 text-white border border-white/30' 
+                          : isJudo
+                            ? 'bg-blue-600 text-white shadow-sm'
+                            : isKids
+                              ? 'bg-amber-600/30 text-amber-300 border border-amber-500/40'
+                              : 'bg-white/10 text-white'
+                    }`}>
+                      {t}
+                    </div>
+
+                    <div>
+                      <div class="flex items-center gap-1.5">
+                        <span class="text-sm">
+                          {slot.icon}
+                        </span>
+                        <h4 data-slot-name={slot.name} class={`slot-name-text text-sm font-black tracking-wide uppercase ${isBJJGi ? 'text-zinc-950' : 'text-white'}`}>
+                          {slot.name}
+                        </h4>
+                      </div>
+                      <p data-slot-label={slot.label} class={`slot-label-text text-[11px] ${isBJJGi ? 'text-zinc-700 font-semibold' : 'text-zinc-400'}`}>
+                        {slot.label}
+                      </p>
+                    </div>
+                  </div>
+
+                  <a
+                    href={`https://wa.me/${whatsappNumber}?text=${waSlotMsg}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-wa-slot
+                    data-slot-name={slot.name}
+                    data-slot-day={d.name}
+                    data-slot-time={t}
+                    class={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-black uppercase transition-transform active:scale-95 ${
+                      isBJJGi 
+                        ? 'bg-red-600 text-white hover:bg-red-700 shadow-md' 
+                        : isFemenino
+                          ? 'bg-black text-white hover:bg-zinc-900 border border-white/30'
+                          : isJudo
+                            ? 'bg-white text-blue-950 hover:bg-blue-100 font-black'
+                            : isKids
+                              ? 'bg-amber-500 text-black font-black'
+                              : 'bg-white text-black hover:bg-zinc-200'
+                    }`}
+                  >
+                    <span data-i18n="schedule.bookBtn">Reservar</span>
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- DESKTOP & FULL TABLE VIEW -->
+    <div id="full-table-view" class="hidden sm:block mb-12">
+      <!-- Legend of Disciplines -->
+      <div class="flex flex-wrap items-center justify-between text-xs text-zinc-300 gap-3 mb-3 px-2">
+        <div class="flex flex-wrap items-center gap-4">
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-blue-600 border border-blue-400"></span>
+            <span data-i18n="schedule.legendJudo">Judo Olímpico</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-white border border-zinc-400"></span>
+            <span data-i18n="schedule.legendBjjGi">BJJ Gi</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-zinc-800 border border-white/30"></span>
+            <span data-i18n="schedule.legendNoGi">No-Gi</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-red-600 border border-red-400"></span>
+            <span data-i18n="schedule.legendWomen">BJJ Femenino</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-amber-500 border border-amber-400"></span>
+            <span data-i18n="schedule.legendKids">Judo Kids</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-white/20 border border-white/30"></span>
+            <span data-i18n="schedule.legendOpenMat">Tatami Abierto</span>
+          </span>
+        </div>
+        <span data-i18n="schedule.legendNotice" class="text-zinc-400 italic">Pulsa en cualquier clase para reservar por WhatsApp</span>
+      </div>
+
+      <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-[#09090C] shadow-2xl backdrop-blur-xl">
+        <!-- Subtle Watermark Logos in Table Background (Team Kurama Left, Team Kong Right) -->
+        <div class="absolute left-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.07] mix-blend-screen select-none z-0">
+          <img src={`${import.meta.env.BASE_URL}images/logo_team_kurama.png`} alt="" class="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(220,38,38,0.5)]" />
+        </div>
+        <div class="absolute right-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.07] mix-blend-screen select-none z-0">
+          <img src={`${import.meta.env.BASE_URL}images/logo_team_kong.png`} alt="" class="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
+        </div>
+
+        <div class="overflow-x-auto relative z-10">
+          <table class="w-full border-collapse text-center min-w-[760px]">
+          <!-- Table Header: Days of the week in dark red gradient -->
+          <thead>
+            <tr>
+              <!-- Empty corner for time column -->
+              <th class="p-3.5 bg-black/80 border-b border-r border-white/15 w-24 text-zinc-400 text-xs font-black uppercase tracking-wider font-mono">
+                HORA
+              </th>
+
+              {daysData.map(d => (
+                <th class="day-table-header p-3.5 bg-gradient-to-b from-red-800 to-red-900 text-white border-b border-r border-white/15 last:border-r-0 text-sm md:text-base font-black uppercase tracking-wider font-display shadow-inner">
+                  {d.name}
+                </th>
+              ))}
+            </tr>
+          </thead>
+
+          <!-- Table Body: 7 Time Rows -->
+          <tbody>
+            {times.map((t) => (
+              <tr class="border-b border-white/10 last:border-b-0 hover:bg-white/[0.015] transition-colors">
+                <!-- Time Column Header -->
+                <td class="p-3 bg-black/60 border-r border-white/15 text-white font-mono font-black text-sm md:text-base tracking-tight shrink-0 shadow-sm">
+                  <div class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                    {t}
+                  </div>
+                </td>
+
+                <!-- Day Cells -->
+                {daysData.map(d => {
+                  const slot = d.slots[t as keyof typeof d.slots];
+                  
+                  if (!slot) {
+                    return (
+                      <td class="p-2 border-r border-white/10 last:border-r-0 align-middle bg-black/20">
+                        <div class="h-20 sm:h-22 rounded-2xl flex items-center justify-center border border-white/[0.03] text-zinc-800 text-xs select-none">
+                          <span class="w-1.5 h-1.5 rounded-full bg-white/5"></span>
+                        </div>
+                      </td>
+                    );
+                  }
+
+                  const isFemenino = slot.type === 'femenino';
+                  const isBJJGi = slot.type === 'bjj-gi';
+                  const isNoGi = slot.type === 'nogi';
+                  const isJudo = slot.type === 'judo';
+                  const isKids = slot.type === 'kids';
+                  const isTatami = slot.type === 'tatami';
+
+                  const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar mi clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
+
+                  return (
+                    <td class="p-1.5 sm:p-2 border-r border-white/10 last:border-r-0 align-middle">
+                      <a
+                        href={`https://wa.me/${whatsappNumber}?text=${waSlotMsg}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-wa-slot
+                        data-slot-name={slot.name}
+                        data-slot-day={d.name}
+                        data-slot-time={t}
+                        data-slot-type={slot.type}
+                        class={`schedule-slot-card group relative block h-20 sm:h-22 p-2 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-103 hover:shadow-xl cursor-pointer ${
+                          isFemenino
+                            ? 'bg-gradient-to-br from-red-600 via-red-700 to-red-900 text-white border-2 border-red-400/80 shadow-lg shadow-red-600/40 ring-1 ring-red-400'
+                            : isBJJGi
+                              ? 'bg-white text-zinc-950 font-black shadow-lg border border-white hover:border-zinc-300'
+                              : isJudo
+                                ? 'bg-gradient-to-br from-[#0c1a33] via-[#091428] to-[#040914] text-white border border-blue-400/60 shadow-md shadow-blue-950/40 hover:border-blue-300'
+                                : isKids
+                                  ? 'bg-gradient-to-br from-[#1c1e29] to-[#12131a] text-white border border-amber-500/50 hover:border-amber-400 shadow-md'
+                                  : isNoGi
+                                    ? 'bg-zinc-900 text-white border border-white/20 hover:border-white/40 shadow-md'
+                                    : 'bg-white/[0.04] text-zinc-200 border border-white/10 hover:border-white/25 hover:bg-white/[0.07]'
+                        }`}
+                        title={`Reservar ${slot.name} - ${d.name} ${t}`}
+                      >
+                        <!-- Icon -->
+                        <div class="text-sm sm:text-base mb-0.5 group-hover:scale-110 transition-transform">
+                          {slot.icon}
+                        </div>
+
+                        <!-- Class Name -->
+                        <span data-slot-name={slot.name} class={`slot-name-text text-[11px] sm:text-xs font-black leading-tight tracking-wider uppercase block ${
+                          isBJJGi ? 'text-zinc-950' : isJudo ? 'text-blue-100' : isKids ? 'text-amber-200' : 'text-white'
+                        }`}>
+                          {slot.name}
+                        </span>
+
+                        <!-- Subtle subtitle label -->
+                        <span data-slot-label={slot.label} class={`slot-label-text text-[9px] truncate max-w-[95px] block ${
+                          isBJJGi ? 'text-zinc-600 font-semibold' : 'text-zinc-400'
+                        }`}>
+                          {slot.label}
+                        </span>
+
+                        <!-- Subtle hover prompt -->
+                        <span class={`text-[8px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity ${
+                          isBJJGi ? 'text-red-700' : 'text-red-400'
+                        }`}>
+                          <span data-i18n="schedule.hoverBook">Reservar &rarr;</span>
+                        </span>
+                      </a>
+                    </td>
+                  );
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Promo Banner (Judo Olímpico + BJJ Team Kong / Kurama) -->
+    <div class="relative rounded-3xl overflow-hidden p-6 sm:p-8 bg-gradient-to-r from-red-950 via-zinc-900 to-red-950 border border-red-500/30 shadow-2xl mb-20 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6 group">
+      <!-- Glow effect -->
+      <div class="absolute -top-20 -left-20 w-40 h-40 bg-red-600/30 rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="space-y-1.5 relative z-10">
+        <span data-i18n="schedule.bannerBadge" class="text-xs font-black uppercase tracking-widest text-red-400 flex items-center justify-center sm:justify-start gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
+          SALVADOR & CARLOS CASES · MIRCO BISCARINI
+        </span>
+        <h3 data-i18n="schedule.bannerTitle" class="text-xl sm:text-2xl md:text-3xl font-black text-white font-display uppercase tracking-tight">
+          ¡EMPIEZA HOY! TU PRIMERA CLASE ES 100% GRATIS
+        </h3>
+        <p data-i18n-html="schedule.bannerDesc" class="text-xs sm:text-sm text-zinc-300 max-w-xl leading-relaxed">
+          Prueba una clase de Judo Olímpico o Brazilian Jiu-Jitsu en el horario que elijas. Conoce el tatami en <strong>C/ de Perú, 14 (Alicante)</strong>.
+        </p>
+      </div>
+
+      <a
+        id="banner-wa-btn"
+        href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent("¡Hola Salva, Carlos y Mirco! Quiero reservar mi PRIMERA CLASE GRATIS de Judo o BJJ en Chidaoba Alicante.")}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="relative z-10 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl text-sm sm:text-base font-extrabold text-white bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 shadow-xl shadow-red-600/30 hover:scale-105 transition-all duration-200 shrink-0"
+      >
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+        </svg>
+        <span data-i18n="schedule.bannerBtn">Reservar Clase Gratis →</span>
+      </a>
+    </div>
+
+    <!-- Accordion FAQ -->
+    <div class="max-w-4xl mx-auto space-y-4">
+      <div class="text-center mb-8 space-y-2">
+        <div data-i18n="faqs.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-white/10 text-white border border-white/20">
+          RESOLVEMOS TUS DUDAS
+        </div>
+        <h3 data-i18n="faqs.title" class="text-2xl sm:text-3xl font-black text-white font-display">
+          Preguntas Frecuentes sobre las Clases
+        </h3>
+      </div>
+
+      {faqs.map((faq) => (
+        <details class="glass-card rounded-2xl border border-white/10 group overflow-hidden transition-all duration-200">
+          <summary class="p-5 sm:p-6 text-base font-bold text-white cursor-pointer flex items-center justify-between gap-4 list-none select-none hover:text-red-400 transition-colors">
+            <span data-i18n={faq.qKey}>{faq.q}</span>
+            <span class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 group-open:rotate-180 group-open:text-red-400 transition-transform shrink-0">
+              ▼
+            </span>
+          </summary>
+          <div data-i18n={faq.aKey} class="px-5 sm:px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-white/5 pt-4">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>
+
+<!-- Client Script for Interactive Filters and Mobile View Switching -->
+<script is:inline>
+  (function () {
+    // 1. Discipline Filter Logic
+    const filterPills = document.querySelectorAll('.filter-pill');
+    const slotCards = document.querySelectorAll('.schedule-slot-card, .schedule-card-mobile');
+
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        const filter = pill.getAttribute('data-filter');
+
+        // Update active state of pills
+        filterPills.forEach(p => {
+          p.classList.remove('active', 'bg-red-600', 'text-white', 'shadow-lg', 'shadow-red-600/30');
+          p.classList.add('bg-white/5', 'text-zinc-300');
+        });
+        pill.classList.add('active', 'bg-red-600', 'text-white', 'shadow-lg', 'shadow-red-600/30');
+        pill.classList.remove('bg-white/5', 'text-zinc-300');
+
+        // Filter cards
+        slotCards.forEach(card => {
+          const slotType = card.getAttribute('data-slot-type');
+          if (filter === 'all' || slotType === filter) {
+            card.style.opacity = '1';
+            card.style.filter = 'grayscale(0%)';
+            card.style.transform = 'scale(1)';
+          } else {
+            card.style.opacity = '0.25';
+            card.style.filter = 'grayscale(80%)';
+            card.style.transform = 'scale(0.96)';
+          }
+        });
+      });
+    });
+
+    // 2. Mobile View Toggle (Day View vs Table View)
+    const btnViewDay = document.getElementById('btn-view-day');
+    const btnViewTable = document.getElementById('btn-view-table');
+    const mobileDayView = document.getElementById('mobile-day-view');
+    const fullTableView = document.getElementById('full-table-view');
+
+    if (btnViewDay && btnViewTable && mobileDayView && fullTableView) {
+      btnViewDay.addEventListener('click', () => {
+        btnViewDay.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewDay.classList.remove('text-zinc-400');
+        btnViewTable.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewTable.classList.add('text-zinc-400');
+
+        mobileDayView.classList.remove('hidden');
+        fullTableView.classList.add('hidden');
+      });
+
+      btnViewTable.addEventListener('click', () => {
+        btnViewTable.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewTable.classList.remove('text-zinc-400');
+        btnViewDay.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewDay.classList.add('text-zinc-400');
+
+        fullTableView.classList.remove('hidden');
+        fullTableView.classList.remove('sm:block');
+        mobileDayView.classList.add('hidden');
+      });
+    }
+
+    // 3. Mobile Day Tab Switching
+    const dayTabBtns = document.querySelectorAll('.day-tab-btn');
+    const dayPanels = document.querySelectorAll('.day-panel');
+
+    dayTabBtns.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const dayId = tab.getAttribute('data-day-tab');
+
+        // Update tab button styles
+        dayTabBtns.forEach(t => {
+          t.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+          t.classList.add('text-zinc-400');
+        });
+        tab.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        tab.classList.remove('text-zinc-400');
+
+        // Show target panel
+        dayPanels.forEach(p => {
+          p.classList.add('hidden');
+          p.classList.remove('block');
+        });
+        const targetPanel = document.getElementById(`day-panel-${dayId}`);
+        if (targetPanel) {
+          targetPanel.classList.remove('hidden');
+          targetPanel.classList.add('block');
+        }
+      });
+    });
+  })();
+</script>

@@ -1,0 +1,82 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "CHIDAOBA | Judo Olímpico & BJJ con Salvador y Carlos Cases en Alicante",
+  description = "Club de Judo Olímpico y Brazilian Jiu-Jitsu (BJJ) CHIDAOBA en Alicante: Salvador Cases (Olímpico París 2024), Carlos Cases y Mirco Biscarini. Consulta horarios oficiales y clases.",
+  image = `${import.meta.env.BASE_URL}images/salva_competition_1.jpg`,
+} = Astro.props;
+const scriptSrc = `${import.meta.env.BASE_URL}js/i18n.js?v=20260911_v8`;
+---
+
+<!doctype html>
+<html lang="es" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥋</text></svg>" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Chidaoba, Salvador Cases, Carlos Cases, Judo Alicante, BJJ Alicante, Brazilian Jiu Jitsu Alicante, Club de Judo Chidaoba, Escuela de Atletas, Artes Marciales Alicante, Ne-Waza" />
+    <meta name="author" content="Salvador Cases & Carlos Cases" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chidaoba.es/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+
+    <!-- Google Fonts: Montserrat & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#050505] text-zinc-100 antialiased selection:bg-red-600 selection:text-white">
+    <!-- Ambient subtle lighting -->
+    <div class="fixed inset-0 pointer-events-none z-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(255,255,255,0.06),rgba(0,0,0,0))]"></div>
+    <div class="fixed -top-40 -left-40 w-96 h-96 bg-white/[0.03] rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="fixed top-1/2 -right-40 w-96 h-96 bg-red-600/[0.08] rounded-full blur-[140px] pointer-events-none"></div>
+
+    <div class="relative z-10 flex flex-col min-h-screen">
+      <slot />
+    </div>
+
+    <!-- Scroll Reveal Observer Script -->
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal-init').forEach((el) => {
+        observer.observe(el);
+      });
+    </script>
+
+    <!-- Bilingual i18n Translation Script -->
+    <script is:inline src={scriptSrc}></script>
+  </body>
+</html>

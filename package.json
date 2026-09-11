@@ -1,0 +1,24 @@
+{
+  "name": "salvador-cases-gym",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_DEV_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs dev --host",
+    "start": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_DEV_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs dev --host",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 ASTRO_PREVIEW_BACKGROUND=1 /opt/homebrew/bin/node ./node_modules/astro/bin/astro.mjs preview --host"
+  },
+  "keywords": [
+    "judo",
+    "bjj",
+    "salvador-cases",
+    "gym",
+    "alicante",
+    "astro"
+  ],
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.18.2",
+    "tailwindcss": "^3.4.19"
+  }
+}

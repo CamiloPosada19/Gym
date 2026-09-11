@@ -1,0 +1,177 @@
+---
+// src/components/Disciplines.astro
+const disciplines = [
+  {
+    title: "Judo Olímpico (Tachi-Waza & Ne-Waza)",
+    titleKey: "disciplines.d1Name",
+    descKey: "disciplines.d1Desc",
+    subtitle: "El poder del derribo y la máxima efectividad de agarres",
+    subtitleKey: "disciplines.d1Subtitle",
+    badge: "Arte Olímpico",
+    badgeKey: "disciplines.d1Badge",
+    badgeColor: "bg-white text-black font-black",
+    isBJJ: false,
+    description: "Metodología olímpica directa de los hermanos Cases. Aprende la biomecánica de proyecciones limpias, desequilibrio (kuzushi), caídas seguras y transiciones letales.",
+    features: [
+      { text: "Ukemi: el arte de caer con total seguridad y sin lesiones", key: "disciplines.d1F1" },
+      { text: "Proyecciones olímpicas: Uchi-Mata, Seoi-Nage, Harai-Goshi", key: "disciplines.d1F2" },
+      { text: "Kumi-Kata táctico (dominio absoluto de solapas y mangas)", key: "disciplines.d1F3" },
+      { text: "Transición inmediata de pie a inmovilización y estrangulación", key: "disciplines.d1F4" }
+    ],
+    idealFor: "Adultos y jóvenes que buscan potencia, agilidad, derribos de élite y disciplina marcial.",
+    idealKey: "disciplines.d1Ideal",
+    ctaKey: "disciplines.d1Cta"
+  },
+  {
+    title: "Brazilian Jiu-Jitsu (BJJ Gi & No-Gi)",
+    titleKey: "disciplines.d2Name",
+    descKey: "disciplines.d2Desc",
+    subtitle: "El arte suave y el ajedrez de sumisiones en el tatami",
+    subtitleKey: "disciplines.d2Subtitle",
+    badge: "Grappling & BJJ",
+    badgeKey: "disciplines.d2Badge",
+    badgeColor: "bg-red-600 text-white font-black shadow-md shadow-red-600/30",
+    isBJJ: true,
+    description: "La disciplina de suelo más técnica del mundo. Aprende a controlar, revertir y finalizar a oponentes de cualquier tamaño mediante palancas articulares y estrangulaciones.",
+    features: [
+      { text: "BJJ con Kimono (Gi): control posicional, solapas y palancas", key: "disciplines.d2F1" },
+      { text: "No-Gi Grappling: velocidad, lucha cuerpo a cuerpo y sumisiones", key: "disciplines.d2F2" },
+      { text: "Pases de guardia, raspados y sumisiones de alta eficiencia", key: "disciplines.d2F3" },
+      { text: "Sparring técnico progresivo con máximo respeto entre compañeros", key: "disciplines.d2F4" }
+    ],
+    idealFor: "Quienes buscan defensa personal inteligente, acondicionamiento y fluidez en suelo.",
+    idealKey: "disciplines.d2Ideal",
+    ctaKey: "disciplines.d2Cta"
+  },
+  {
+    title: "Chidaoba Kids & Juniors (4 a 15 Años)",
+    titleKey: "disciplines.d3Name",
+    descKey: "disciplines.d3Desc",
+    subtitle: "Valores inmutables, psicomotricidad, respeto y anti-bullying",
+    subtitleKey: "disciplines.d3Subtitle",
+    badge: "Escuela Infantil",
+    badgeKey: "disciplines.d3Badge",
+    badgeColor: "bg-zinc-800 text-white border border-white/20 font-bold",
+    isBJJ: false,
+    description: "Pedagogía marcial liderada por Carlos y Salva Cases. Fomentamos la confianza en uno mismo, la concentración escolar, la coordinación motora y el juego limpio.",
+    features: [
+      { text: "Código moral del Judo: Respeto, Cortesía, Modestia y Autocontrol", key: "disciplines.d3F1" },
+      { text: "Psicomotricidad, equilibrio, fuerza funcional y agilidad", key: "disciplines.d3F2" },
+      { text: "Prevención activa del acoso escolar (seguridad sin agresividad)", key: "disciplines.d3F3" },
+      { text: "Grupos adaptados por edades (4-7, 8-11 y 12-15 años)", key: "disciplines.d3F4" }
+    ],
+    idealFor: "Padres que quieren una formación integral en valores deportivos y fortaleza física para sus hijos.",
+    idealKey: "disciplines.d3Ideal",
+    ctaKey: "disciplines.d3Cta"
+  }
+];
+
+const whatsappNumber = "34600000000";
+const whatsappText = encodeURIComponent("¡Hola Salva y Carlos! Quiero consultar los horarios y niveles de Judo y BJJ en CHIDAOBA.");
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+---
+
+<section id="disciplinas" class="py-20 md:py-28 relative overflow-hidden bg-[#050505]">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div data-i18n="disciplines.badge" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-black uppercase tracking-wider bg-red-600/15 text-red-400 border border-red-500/30">
+        NUESTRO PROGRAMA MARCIAL
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black font-display text-white tracking-tight">
+        <span data-i18n="disciplines.title">DISCIPLINAS IMPARTIDAS EN</span> <br />
+        <span class="text-silver-gradient">JUDO OLÍMPICO</span> + <span class="text-red-500">BRAZILIAN JIU-JITSU</span>
+      </h2>
+      <p data-i18n="disciplines.subtitle" class="text-base sm:text-lg text-zinc-300">
+        Un currículum integral que abarca desde la lucha olímpica de pie hasta el control total y las sumisiones en el suelo, con programas adaptados para todas las edades y niveles.
+      </p>
+    </div>
+
+    <!-- Visual Banner with BJJ Image -->
+    <div class="mb-16 relative rounded-3xl overflow-hidden border border-white/15 shadow-2xl group">
+      <img
+        src={`${import.meta.env.BASE_URL}images/bjj_ground_grappling.jpg`}
+        alt="Mirco Biscarini en combate real de Brazilian Jiu-Jitsu y Ne-Waza en tatami"
+        class="w-full h-64 sm:h-96 object-cover object-center group-hover:scale-102 transition-transform duration-700"
+      />
+      <div class="absolute inset-0 bg-gradient-to-r from-[#050505]/95 via-[#050505]/65 to-transparent flex items-center">
+        <div class="p-6 sm:p-12 max-w-xl space-y-3">
+          <span data-i18n="disciplines.bannerBadge" class="px-3 py-1 rounded-full text-xs font-black bg-red-600 text-white uppercase tracking-wider shadow-md">
+            FILOSOFÍA DE ENTRENAMIENTO
+          </span>
+          <h3 data-i18n="disciplines.quote" class="text-2xl sm:text-3xl font-black text-white font-display">
+            "De pie te derribo con Judo. En el suelo te someto con BJJ."
+          </h3>
+          <p data-i18n="disciplines.quoteAuthor" class="text-xs sm:text-sm text-zinc-300">
+            Filosofía de Combate Total · Chidaoba Alicante
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Disciplines Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {disciplines.map(d => (
+        <div class={`p-6 sm:p-8 rounded-3xl transition-all duration-300 flex flex-col justify-between group shadow-xl ${
+          d.isBJJ 
+            ? 'glass-card-red border border-red-500/40 hover:border-red-500 red-border-glow' 
+            : 'glass-card border border-white/10 hover:border-white/30'
+        }`}>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span data-i18n={d.badgeKey} class={`text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full ${d.badgeColor}`}>
+                {d.badge}
+              </span>
+              <span data-i18n="disciplines.allLevels" class="text-xs text-zinc-400 font-semibold">Todos los niveles</span>
+            </div>
+
+            <h3 data-i18n={d.titleKey} class={`text-2xl font-black text-white font-display transition-colors ${d.isBJJ ? 'group-hover:text-red-400' : 'group-hover:text-white'}`}>
+              {d.title}
+            </h3>
+            
+            <p data-i18n={d.subtitleKey} class={`text-xs font-semibold italic ${d.isBJJ ? 'text-red-300' : 'text-zinc-400'}`}>
+              {d.subtitle}
+            </p>
+
+            <p data-i18n={d.descKey} class="text-sm text-zinc-300 leading-relaxed">
+              {d.description}
+            </p>
+
+            <div class="space-y-2 pt-2">
+              <span data-i18n="disciplines.learnHeading" class="text-xs font-bold text-white uppercase tracking-wider block">¿Qué aprenderás?</span>
+              <ul class="space-y-1.5">
+                {d.features.map(f => (
+                  <li class="flex items-center gap-2.5 text-xs text-zinc-300">
+                    <span class={`w-1.5 h-1.5 rounded-full shrink-0 ${d.isBJJ ? 'bg-red-500' : 'bg-white'}`}></span>
+                    <span data-i18n={f.key}>{f.text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-white/10">
+            <p class="text-xs text-zinc-400 mb-4">
+              <strong data-i18n="disciplines.recommendedLabel" class="text-zinc-200">Recomendado para:</strong> <span data-i18n={d.idealKey}>{d.idealFor}</span>
+            </p>
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class={`w-full inline-flex items-center justify-center gap-2 py-3.5 rounded-xl text-xs font-bold transition-all shadow-md ${
+                d.isBJJ
+                  ? 'bg-red-600 hover:bg-red-500 text-white border border-red-500 shadow-red-600/30'
+                  : 'bg-white/5 hover:bg-white hover:text-black text-white border border-white/15'
+              }`}
+            >
+              <span data-i18n={d.ctaKey}>Preguntar por horarios de {d.title.split('(')[0]}</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+  </div>
+</section>
