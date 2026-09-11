@@ -30,6 +30,7 @@ const features = [
     descKey: "facility.f4Desc"
   }
 ];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="instalaciones" class="py-20 md:py-28 relative bg-[#050505] border-t border-white/10 overflow-hidden">
@@ -51,7 +52,7 @@ const features = [
     <!-- Big Image Display -->
     <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-card-elevated mb-12 group">
       <img
-        src={`${import.meta.env.BASE_URL}images/gym_dojo_interior.jpg`}
+        src={`${base}/images/gym_dojo_interior.jpg`}
         alt="Interior del nuevo dojo Chidaoba en Alicante"
         class="w-full h-80 sm:h-[480px] object-cover object-center group-hover:scale-102 transition-transform duration-700"
       />

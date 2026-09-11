@@ -5,6 +5,7 @@ import Countdown from './Countdown.astro';
 const whatsappNumber = "34600000000";
 const whatsappText = encodeURIComponent("¡Hola Salva, Carlos y Mirco! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.");
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <section id="proyecto" class="relative pt-10 pb-20 md:pt-16 md:pb-28 overflow-hidden">
@@ -114,7 +115,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
         <!-- REAL Action Photo Card of Salvador Cases -->
         <div class="relative rounded-3xl overflow-hidden border border-white/15 hover:border-white/30 transition-all shadow-card-elevated group">
           <img
-            src={`${import.meta.env.BASE_URL}images/salva_competition_1.jpg`}
+            src={`${base}/images/salva_competition_1.jpg`}
             alt="Salvador Cases en la final del Gran Premio de Judo"
             class="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-700"
             loading="eager"
@@ -136,7 +137,7 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
           <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between">
             <div class="flex items-center gap-3">
               <img
-                src={`${import.meta.env.BASE_URL}images/salva_profile_ijf.jpg`}
+                src={`${base}/images/salva_profile_ijf.jpg`}
                 alt="Salvador Cases perfil oficial IJF"
                 class="w-11 h-11 rounded-full border-2 border-white/40 object-cover shadow-lg shrink-0"
               />
