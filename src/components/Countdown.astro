@@ -7,12 +7,12 @@ interface Props {
 const { className = "" } = Astro.props;
 
 // Cálculo en servidor con zona horaria de España (CEST: UTC+2)
-// Apertura oficial: 1 de octubre a las 00:00:00 en Alicante (España)
+// Apertura oficial: 5 de octubre a las 00:00:00 en Alicante (España)
 const now = new Date();
 const currentYear = now.getFullYear();
-let targetDate = new Date(`${currentYear}-10-01T00:00:00+02:00`);
+let targetDate = new Date(`${currentYear}-10-05T00:00:00+02:00`);
 if (now.getTime() >= targetDate.getTime()) {
-  targetDate = new Date(`${currentYear + 1}-10-01T00:00:00+02:00`);
+  targetDate = new Date(`${currentYear + 1}-10-05T00:00:00+02:00`);
 }
 
 const diffMs = Math.max(0, targetDate.getTime() - now.getTime());
@@ -32,7 +32,7 @@ const targetIsoString = targetDate.toISOString();
     <!-- Header Badge -->
     <div data-i18n="countdown.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-widest uppercase bg-red-600/10 dark:bg-red-600/15 text-red-600 dark:text-red-400 border border-red-500/20 dark:border-red-500/30 mb-3">
       <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-      CUENTA ATRÁS · APERTURA 1 DE OCTUBRE
+      CUENTA ATRÁS · APERTURA 5 DE OCTUBRE
     </div>
     
     <!-- Title -->
@@ -40,7 +40,7 @@ const targetIsoString = targetDate.toISOString();
       EL TATAMI ABRE SUS PUERTAS EN:
     </h3>
     <p data-i18n="countdown.subtitle" class="text-xs text-zinc-600 dark:text-zinc-400 max-w-md mb-5">
-      Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 1 de octubre. Asegura tu plaza antes del inicio de clases.
+      Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 5 de octubre. Asegura tu plaza antes del inicio de clases.
     </p>
 
     <!-- Digits Grid -->
@@ -105,9 +105,9 @@ const targetIsoString = targetDate.toISOString();
       }
       var now = new Date();
       var currentYear = now.getFullYear();
-      var target = new Date(currentYear + '-10-01T00:00:00+02:00');
+      var target = new Date(currentYear + '-10-05T00:00:00+02:00');
       if (now.getTime() >= target.getTime()) {
-        target = new Date((currentYear + 1) + '-10-01T00:00:00+02:00');
+        target = new Date((currentYear + 1) + '-10-05T00:00:00+02:00');
       }
       return target;
     }

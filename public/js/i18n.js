@@ -37,9 +37,9 @@
       "hero.schedDays": "Lunes a Sábado",
       "hero.schedFullGrid": "Ver parrilla completa →",
 
-      "countdown.badge": "CUENTA ATRÁS · APERTURA 1 DE OCTUBRE",
+      "countdown.badge": "CUENTA ATRÁS · APERTURA 5 DE OCTUBRE",
       "countdown.title": "EL TATAMI ABRE SUS PUERTAS EN:",
-      "countdown.subtitle": "Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 1 de octubre. Asegura tu plaza antes del inicio de clases.",
+      "countdown.subtitle": "Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 5 de octubre. Asegura tu plaza antes del inicio de clases.",
       "countdown.days": "Días",
       "countdown.hours": "Horas",
       "countdown.minutes": "Min",
@@ -263,9 +263,9 @@
       "hero.schedDays": "Monday to Saturday",
       "hero.schedFullGrid": "View full schedule →",
 
-      "countdown.badge": "COUNTDOWN · OCTOBER 1ST OPENING",
+      "countdown.badge": "COUNTDOWN · OCTOBER 5TH OPENING",
       "countdown.title": "THE TATAMI OPENS ITS DOORS IN:",
-      "countdown.subtitle": "We are completing the new dojo facilities in Alicante to open on October 1st. Reserve your spot before classes begin.",
+      "countdown.subtitle": "We are completing the new dojo facilities in Alicante to open on October 5th. Reserve your spot before classes begin.",
       "countdown.days": "Days",
       "countdown.hours": "Hours",
       "countdown.minutes": "Min",
@@ -635,7 +635,7 @@
       }
     });
 
-    document.querySelectorAll('[data-slot-label]').forEach((el) => {
+    document.querySelectorAll('.slot-label-text[data-slot-label]').forEach((el) => {
       const origRaw = el.getAttribute('data-slot-label');
       const orig = cleanStr(origRaw);
       const targetMap = slotLabelTranslations[lang] || slotLabelTranslations.es;

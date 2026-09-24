@@ -326,7 +326,7 @@ const faqs = [
                 const isFemenino = slot.type === 'femenino';
                 const isBJJGi = slot.type === 'bjj-gi';
                 const isNoGi = slot.type === 'nogi';
-                const isJudo = slot.type === 'judo';
+                const isJudo = slot.name === 'JUDO' || slot.type === 'judo';
                 const isKids = slot.type === 'kids';
 
                 const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar una clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
@@ -355,21 +355,25 @@ const faqs = [
                           ? 'bg-zinc-800 text-white dark:bg-zinc-700' 
                           : 'bg-emerald-600 text-white';
 
-                const disciplineTag = isJudo
-                  ? { label: 'JUDO', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
-                  : isBJJGi
-                    ? { label: 'BJJ', cls: 'bg-red-100 text-red-800 dark:bg-red-950/80 dark:text-red-300 border border-red-200 dark:border-red-800/50' }
-                    : isKids
-                      ? { label: 'KIDS', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50' }
-                      : isFemenino
-                        ? { label: 'FEMENINO', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50' }
-                        : isNoGi
-                          ? { label: 'NO-GI', cls: 'bg-zinc-200 text-zinc-800 dark:bg-white/10 dark:text-zinc-200 border border-zinc-300 dark:border-white/15' }
-                          : { label: 'OPEN MAT', cls: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50' };
+                const disciplineTag = isJudo && isKids
+                  ? { label: 'JUDO KIDS', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
+                  : isJudo
+                    ? { label: 'JUDO', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
+                    : isBJJGi
+                      ? { label: 'BJJ', cls: 'bg-red-100 text-red-800 dark:bg-red-950/80 dark:text-red-300 border border-red-200 dark:border-red-800/50' }
+                      : isKids
+                        ? { label: 'BJJ KIDS', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50' }
+                        : isFemenino
+                          ? { label: 'FEMENINO', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50' }
+                          : isNoGi
+                            ? { label: 'NO-GI', cls: 'bg-zinc-200 text-zinc-800 dark:bg-white/10 dark:text-zinc-200 border border-zinc-300 dark:border-white/15' }
+                            : { label: 'OPEN MAT', cls: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50' };
 
                 return (
                   <div
-                    data-slot-type={slot.type}
+                    data-slot-type={slot.name === 'JUDO' ? `${slot.type} judo` : slot.type}
+                    data-slot-name={slot.name}
+                    data-filter-label={slot.label}
                     class={`schedule-card-mobile p-3.5 sm:p-4 rounded-2xl flex items-center justify-between gap-3 bg-white dark:bg-[#111116] border border-zinc-200 dark:border-white/10 border-l-4 ${accentBorder} shadow-sm hover:shadow-md transition-all active:scale-[0.99]`}
                   >
                     <div class="flex items-center gap-3 min-w-0">
@@ -511,7 +515,7 @@ const faqs = [
                           const isFemenino = slot.type === 'femenino';
                           const isBJJGi = slot.type === 'bjj-gi';
                           const isNoGi = slot.type === 'nogi';
-                          const isJudo = slot.type === 'judo';
+                          const isJudo = slot.name === 'JUDO' || slot.type === 'judo';
                           const isKids = slot.type === 'kids';
                           const isTatami = slot.type === 'tatami';
 
@@ -524,9 +528,10 @@ const faqs = [
                               rel="noopener noreferrer"
                               data-wa-slot
                               data-slot-name={slot.name}
+                              data-filter-label={slot.label}
                               data-slot-day={d.name}
                               data-slot-time={t}
-                              data-slot-type={slot.type}
+                              data-slot-type={slot.name === 'JUDO' ? `${slot.type} judo` : slot.type}
                               class={`schedule-slot-card group relative block min-h-[5rem] sm:min-h-[5.5rem] p-2 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-103 hover:shadow-xl hover:ring-2 hover:ring-white hover:border-white cursor-pointer ${
                                 isFemenino
                                   ? 'bg-gradient-to-br from-red-600 via-red-700 to-red-900 text-white border-2 border-red-400/80 shadow-lg shadow-red-600/40 ring-1 ring-red-400'
@@ -556,7 +561,7 @@ const faqs = [
 
                               <!-- Subtle subtitle label -->
                               <span data-slot-label={slot.label} class={`slot-label-text text-[9px] truncate max-w-[95px] block ${
-                                isBJJGi ? 'text-zinc-600 font-semibold' : 'text-zinc-400'
+                                isBJJGi ? 'text-zinc-600 font-semibold' : (isJudo && isKids ? 'text-amber-300 font-semibold' : 'text-zinc-400')
                               }`}>
                                 {slot.label}
                               </span>
@@ -660,8 +665,31 @@ const faqs = [
 
         // Filter cards
         slotCards.forEach(card => {
-          const slotType = card.getAttribute('data-slot-type');
-          if (filter === 'all' || slotType === filter) {
+          const slotType = (card.getAttribute('data-slot-type') || '').toLowerCase();
+          const slotName = (card.getAttribute('data-slot-name') || '').toUpperCase();
+          const slotLabel = (card.getAttribute('data-filter-label') || card.getAttribute('data-slot-label') || '').toLowerCase();
+          const types = slotType.split(/\s+/);
+
+          let isMatch = false;
+          if (filter === 'all') {
+            isMatch = true;
+          } else if (filter === 'judo') {
+            isMatch = types.includes('judo') || slotName.includes('JUDO');
+          } else if (filter === 'kids') {
+            isMatch = types.includes('kids') || slotLabel.includes('kids') || slotLabel.includes('años');
+          } else if (filter === 'bjj-gi') {
+            isMatch = types.includes('bjj-gi');
+          } else if (filter === 'nogi') {
+            isMatch = types.includes('nogi') || slotName.includes('NOGI');
+          } else if (filter === 'femenino') {
+            isMatch = types.includes('femenino') || slotLabel.includes('femenino');
+          } else if (filter === 'tatami') {
+            isMatch = types.includes('tatami');
+          } else {
+            isMatch = types.includes(filter);
+          }
+
+          if (isMatch) {
             card.style.opacity = '1';
             card.style.filter = 'grayscale(0%)';
             card.style.transform = 'scale(1)';
