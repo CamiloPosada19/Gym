@@ -339,7 +339,7 @@ const faqs = [
                 return (
                   <div
                     data-slot-type={slot.type}
-                    class={`schedule-card-mobile p-4 rounded-2xl flex items-center justify-between gap-3 transition-all ${
+                    class={`schedule-card-mobile p-4 rounded-2xl flex items-center justify-between gap-3 transition-all active:ring-2 active:ring-white ${
                       isFemenino 
                         ? 'bg-gradient-to-r from-red-700 via-red-600 to-red-800 text-white border-2 border-red-400 shadow-lg shadow-red-600/40' 
                         : isBJJGi
@@ -522,7 +522,7 @@ const faqs = [
                               data-slot-day={d.name}
                               data-slot-time={t}
                               data-slot-type={slot.type}
-                              class={`schedule-slot-card group relative block min-h-[5rem] sm:min-h-[5.5rem] p-2 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-103 hover:shadow-xl cursor-pointer ${
+                              class={`schedule-slot-card group relative block min-h-[5rem] sm:min-h-[5.5rem] p-2 rounded-2xl flex flex-col items-center justify-center text-center transition-all duration-300 hover:scale-103 hover:shadow-xl hover:ring-2 hover:ring-white hover:border-white cursor-pointer ${
                                 isFemenino
                                   ? 'bg-gradient-to-br from-red-600 via-red-700 to-red-900 text-white border-2 border-red-400/80 shadow-lg shadow-red-600/40 ring-1 ring-red-400'
                                   : isBJJGi
