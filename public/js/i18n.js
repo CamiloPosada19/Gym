@@ -18,7 +18,7 @@
       "hero.badge2": "📍 Alicante · C/ de Perú, 14 (Planta G)",
       "hero.titlePre": "CLUB DEPORTIVO",
       "hero.titleSuffix": "JUDO OLÍMPICO &",
-      "hero.subtitle": "El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto al Campeón de Europa de BJJ <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) en Alicante.",
+      "hero.subtitle": "El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto a los maestros de BJJ <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) y <strong>Luis Planelles</strong> en Alicante.",
       "hero.stripTitle": "Clases Abiertas · Todos los Niveles",
       "hero.stripDesc": "Iniciación, infantil, adultos y competición con atletas olímpicos",
       "hero.stripCta": "Ver Horarios →",
@@ -37,9 +37,9 @@
       "hero.schedDays": "Lunes a Sábado",
       "hero.schedFullGrid": "Ver parrilla completa →",
 
-      "countdown.badge": "CUENTA ATRÁS · APERTURA 1 DE OCTUBRE",
+      "countdown.badge": "CUENTA ATRÁS · APERTURA 5 DE OCTUBRE",
       "countdown.title": "EL TATAMI ABRE SUS PUERTAS EN:",
-      "countdown.subtitle": "Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 1 de octubre. Asegura tu plaza antes del inicio de clases.",
+      "countdown.subtitle": "Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 5 de octubre. Asegura tu plaza antes del inicio de clases.",
       "countdown.days": "Días",
       "countdown.hours": "Horas",
       "countdown.minutes": "Min",
@@ -50,7 +50,7 @@
 
       "about.badge": "STAFF TÉCNICO DE ÉLITE EN ALICANTE",
       "about.title": "LOS ENTRENADORES",
-      "about.subtitle": "Tres referentes del combate unen sus fuerzas para ofrecer la formación de Judo y Brazilian Jiu-Jitsu más avanzada del país: los hermanos Salvador Cases y Carlos Cases junto al maestro Mirco Biscarini.",
+      "about.subtitle": "Cuatro referentes del combate unen sus fuerzas para ofrecer la formación de Judo y Brazilian Jiu-Jitsu más avanzada del país: los hermanos Salvador Cases y Carlos Cases junto a los maestros de BJJ Mirco Biscarini y Luis Planelles.",
       "about.paris2024": "PARÍS 2024",
       "about.salvaRole": "HEAD COACH · JUDO OLÍMPICO",
       "about.salvaSubtitle": "Subcampeón de Europa · Ne-Waza Specialist",
@@ -93,6 +93,20 @@
       "about.mircoPalm4Title": "Spain Cup BJJ Gi 2021",
       "about.mircoPalm4Tag": "Oro Copa España",
       "about.mircoQuote": "\"El Jiu-Jitsu es un ajedrez corporal donde la técnica vence a la fuerza.\"",
+
+      "about.luisRole": "PROFESOR BJJ · ESPECIALISTA KIDS",
+      "about.luisSubtitle": "Cinturón Negro BJJ · +15 Años de Experiencia",
+      "about.luisBio": "Con más de 15 años sobre el tatami y cinturón negro de Brazilian Jiu-Jitsu, Luis lidera el programa pedagógico de BJJ Infantil (Kids) y adultos. Especialista en motricidad, disciplina, respeto y valores para las nuevas generaciones de deportistas.",
+      "about.luisSpecialties": "Especialidades:",
+      "about.luisPalm1Title": "+15 Años de Experiencia en BJJ",
+      "about.luisPalm1Tag": "Faixa Preta",
+      "about.luisPalm2Title": "Especialista en BJJ Infantil & Juvenil",
+      "about.luisPalm2Tag": "Kids Coach",
+      "about.luisPalm3Title": "Desarrollo Psicomotriz & Disciplina",
+      "about.luisPalm3Tag": "Pedagogía",
+      "about.luisPalm4Title": "Defensa Personal & Fundamentos",
+      "about.luisPalm4Tag": "Grappling",
+      "about.luisQuote": "\"La disciplina, el respeto y la diversión en el tatami forjan la confianza para toda la vida.\"",
 
       "about.galleryBadge": "GALERÍA REAL",
       "about.galleryTitle": "Momentos Reales de Competición y Entrenamiento",
@@ -190,7 +204,7 @@
       "schedule.legendKids": "Judo Kids",
       "schedule.legendOpenMat": "Tatami Abierto",
       "schedule.legendNotice": "Pulsa en cualquier clase para reservar por WhatsApp",
-      "schedule.bannerBadge": "SALVADOR & CARLOS CASES · MIRCO BISCARINI",
+      "schedule.bannerBadge": "SALVADOR & CARLOS CASES · MIRCO BISCARINI · LUIS PLANELLES",
       "schedule.bannerTitle": "¡EMPIEZA HOY! TU PRIMERA CLASE ES 100% GRATIS",
       "schedule.bannerDesc": "Prueba una clase de Judo Olímpico o Brazilian Jiu-Jitsu en el horario que elijas. Conoce el tatami en <strong>C/ de Perú, 14 (Alicante)</strong>.",
       "schedule.bannerBtn": "Reservar Clase Gratis →",
@@ -202,7 +216,7 @@
       "faqs.q2": "¿Cuáles son los horarios de las clases y cómo puedo empezar?",
       "faqs.a2": "Ofrecemos clases distribuidas en turnos de mañana (09:30 Tatami Abierto y 10:00 Judo Olímpico / BJJ Gi / No-Gi), mediodía (15:00 BJJ), tarde para niños y jóvenes (17:30 y 18:30 Judo Kids & Juniors y BJJ Femenino) y noche para adultos y competición (19:30 y 20:45 Judo Olímpico y No-Gi). ¡Tu primera clase de prueba es 100% gratis! Escríbenos por WhatsApp para reservar tu hueco en el horario que prefieras.",
       "faqs.q3": "¿Quién imparte las clases de Judo y quién las de BJJ?",
-      "faqs.a3": "Las clases de Judo Olímpico e infantil están dirigidas personalmente por Salvador Cases (Olímpico en París 2024 y Subcampeón de Europa) y Carlos Cases (Maestro Nacional y Campeón de España en todas las categorías). Las clases de Brazilian Jiu-Jitsu están lideradas por Mirco Biscarini (@mibisjj), Cinturón Negro y Campeón de Europa de BJJ (Team Kong / Team Kurama).",
+      "faqs.a3": "Las clases de Judo Olímpico e infantil están dirigidas personalmente por Salvador Cases (Olímpico en París 2024 y Subcampeón de Europa) y Carlos Cases (Maestro Nacional y Campeón de España en todas las categorías). Las clases de Brazilian Jiu-Jitsu están lideradas por Mirco Biscarini (@mibisjj), Cinturón Negro y Campeón de Europa de BJJ (Team Kurama / Team Kong), junto a Luis Planelles Mira, Cinturón Negro con más de 15 años de experiencia y especialista en BJJ infantil y desarrollo pedagógico.",
       "faqs.q4": "¿Puedo entrenar tanto Judo como BJJ con la misma cuota?",
       "faqs.a4": "¡Sí! Disponemos de tarifa plana combinada ilimitada para que puedas entrenar indistintamente tanto Judo Olímpico como Brazilian Jiu-Jitsu (con Gi y No-Gi Grappling), además de acceso libre a todas las sesiones de Tatami Abierto y Open Mat en nuestras dos plantas.",
       "faqs.q5": "¿Puedo empezar desde cero si nunca he hecho artes marciales?",
@@ -244,7 +258,7 @@
       "hero.badge2": "📍 Alicante · C/ de Perú, 14 (Ground Floor)",
       "hero.titlePre": "SPORTS CLUB",
       "hero.titleSuffix": "OLYMPIC JUDO &",
-      "hero.subtitle": "The premier combat and grappling center founded by brothers <strong>Salvador Cases</strong> (Paris 2024 Olympian, European Silver Medalist) and <strong>Carlos Cases</strong> (Spanish Champion & National Master), alongside European BJJ Champion <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) in Alicante.",
+      "hero.subtitle": "The premier combat and grappling center founded by brothers <strong>Salvador Cases</strong> (Paris 2024 Olympian, European Silver Medalist) and <strong>Carlos Cases</strong> (Spanish Champion & National Master), alongside BJJ masters <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) and <strong>Luis Planelles</strong> in Alicante.",
       "hero.stripTitle": "Open Classes · All Levels Welcome",
       "hero.stripDesc": "Beginners, kids, adults, and competition coached by Olympic athletes",
       "hero.stripCta": "View Timetable →",
@@ -263,9 +277,9 @@
       "hero.schedDays": "Monday to Saturday",
       "hero.schedFullGrid": "View full schedule →",
 
-      "countdown.badge": "COUNTDOWN · OCTOBER 1ST OPENING",
+      "countdown.badge": "COUNTDOWN · OCTOBER 5TH OPENING",
       "countdown.title": "THE TATAMI OPENS ITS DOORS IN:",
-      "countdown.subtitle": "We are completing the new dojo facilities in Alicante to open on October 1st. Reserve your spot before classes begin.",
+      "countdown.subtitle": "We are completing the new dojo facilities in Alicante to open on October 5th. Reserve your spot before classes begin.",
       "countdown.days": "Days",
       "countdown.hours": "Hours",
       "countdown.minutes": "Min",
@@ -276,7 +290,7 @@
 
       "about.badge": "ELITE COACHING STAFF IN ALICANTE",
       "about.title": "THE COACHES",
-      "about.subtitle": "Three martial arts authorities unite to offer the most advanced Judo and Brazilian Jiu-Jitsu training in Spain: brothers Salvador Cases and Carlos Cases together with master Mirco Biscarini.",
+      "about.subtitle": "Four martial arts authorities unite to offer the most advanced Judo and Brazilian Jiu-Jitsu training in Spain: brothers Salvador Cases and Carlos Cases together with BJJ masters Mirco Biscarini and Luis Planelles.",
       "about.paris2024": "PARIS 2024",
       "about.salvaRole": "HEAD COACH · OLYMPIC JUDO",
       "about.salvaSubtitle": "European Silver Medalist · Ne-Waza Specialist",
@@ -319,6 +333,20 @@
       "about.mircoPalm4Title": "Spain Cup BJJ Gi 2021",
       "about.mircoPalm4Tag": "Spain Cup Gold",
       "about.mircoQuote": "\"Jiu-Jitsu is physical chess where flawless technique always overcomes sheer strength.\"",
+
+      "about.luisRole": "BJJ INSTRUCTOR · KIDS SPECIALIST",
+      "about.luisSubtitle": "BJJ Black Belt · 15+ Years Experience",
+      "about.luisBio": "With over 15 years on the mats and a Brazilian Jiu-Jitsu Black Belt, Luis leads the youth (Kids) and adult instructional program. Specialist in martial pedagogy, discipline, respect, and motor skill development for future champions.",
+      "about.luisSpecialties": "Specialties:",
+      "about.luisPalm1Title": "15+ Years of BJJ Experience",
+      "about.luisPalm1Tag": "Faixa Preta",
+      "about.luisPalm2Title": "Youth & Kids BJJ Specialist",
+      "about.luisPalm2Tag": "Kids Coach",
+      "about.luisPalm3Title": "Motor Skills & Discipline",
+      "about.luisPalm3Tag": "Pedagogy",
+      "about.luisPalm4Title": "Self Defense & Core Grappling",
+      "about.luisPalm4Tag": "Grappling",
+      "about.luisQuote": "\"Discipline, respect, and joy on the mats forge lifelong self-confidence.\"",
 
       "about.galleryBadge": "OFFICIAL GALLERY",
       "about.galleryTitle": "Real Moments of Competition and Training",
@@ -416,7 +444,7 @@
       "schedule.legendKids": "Judo Kids",
       "schedule.legendOpenMat": "Open Mat",
       "schedule.legendNotice": "Click any class to book via WhatsApp",
-      "schedule.bannerBadge": "SALVADOR & CARLOS CASES · MIRCO BISCARINI",
+      "schedule.bannerBadge": "SALVADOR & CARLOS CASES · MIRCO BISCARINI · LUIS PLANELLES",
       "schedule.bannerTitle": "START TODAY! YOUR FIRST CLASS IS 100% FREE",
       "schedule.bannerDesc": "Experience an Olympic Judo or Brazilian Jiu-Jitsu class at your preferred time. Come visit our tatami at <strong>C/ de Perú, 14 (Alicante)</strong>.",
       "schedule.bannerBtn": "Book Free Trial Class →",
@@ -428,7 +456,7 @@
       "faqs.q2": "What are the class schedules and how can I get started?",
       "faqs.a2": "We offer sessions across morning hours (09:30 Open Mat and 10:00 Olympic Judo / BJJ Gi / No-Gi), midday (15:00 BJJ), afternoon for children and youth (17:30 and 18:30 Judo Kids & Juniors and Women's BJJ), and evening for adults and competitive fighters (19:30 and 20:45 Olympic Judo & No-Gi). Your first trial class is 100% free! Message us on WhatsApp to book your spot.",
       "faqs.q3": "Who coaches the Judo classes and who coaches BJJ?",
-      "faqs.a3": "Olympic and youth Judo classes are coached directly by Salvador Cases (Paris 2024 Olympian and European Silver Medalist) and Carlos Cases (National Master and Spanish Champion across all divisions). Brazilian Jiu-Jitsu classes are spearheaded by Mirco Biscarini (@mibisjj), Black Belt and European BJJ Champion (Team Kong / Team Kurama).",
+      "faqs.a3": "Olympic and youth Judo classes are coached directly by Salvador Cases (Paris 2024 Olympian and European Silver Medalist) and Carlos Cases (National Master and Spanish Champion across all divisions). Brazilian Jiu-Jitsu classes are spearheaded by Mirco Biscarini (@mibisjj), Black Belt and European BJJ Champion (Team Kurama / Team Kong), alongside Luis Planelles Mira, Black Belt with over 15 years of experience and specialist in kids BJJ and pedagogical development.",
       "faqs.q4": "Can I train both Judo and BJJ under the same membership?",
       "faqs.a4": "Yes! We provide an all-inclusive membership giving you unlimited access to both Olympic Judo and Brazilian Jiu-Jitsu (Gi and No-Gi Grappling), plus open access to Open Mat and sparring sessions across both floors.",
       "faqs.q5": "Can I start from scratch if I have never practiced martial arts?",
@@ -635,7 +663,7 @@
       }
     });
 
-    document.querySelectorAll('[data-slot-label]').forEach((el) => {
+    document.querySelectorAll('.slot-label-text[data-slot-label]').forEach((el) => {
       const origRaw = el.getAttribute('data-slot-label');
       const orig = cleanStr(origRaw);
       const targetMap = slotLabelTranslations[lang] || slotLabelTranslations.es;
