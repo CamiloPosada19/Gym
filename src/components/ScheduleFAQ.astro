@@ -198,7 +198,7 @@ const faqs = [
         type="button"
         data-filter="all"
         data-i18n="schedule.filterAll"
-        class="filter-pill active px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all bg-red-600 text-white shadow-lg shadow-red-600/30"
+        class="filter-pill active px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all bg-white text-black shadow-lg shadow-white/20"
       >
         Todas las Clases
       </button>
@@ -292,7 +292,7 @@ const faqs = [
             data-day-tab={d.id}
             class={`day-tab-btn py-2 text-center rounded-xl transition-all ${
               index === 0 
-                ? 'bg-red-600 text-white font-black shadow-md' 
+                ? 'bg-white text-black font-black shadow-md' 
                 : 'text-zinc-400 font-bold hover:text-white'
             }`}
           >
@@ -651,10 +651,10 @@ const faqs = [
 
         // Update active state of pills
         filterPills.forEach(p => {
-          p.classList.remove('active', 'bg-red-600', 'text-white', 'shadow-lg', 'shadow-red-600/30');
+          p.classList.remove('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-red-600/30');
           p.classList.add('bg-white/5', 'text-zinc-300');
         });
-        pill.classList.add('active', 'bg-red-600', 'text-white', 'shadow-lg', 'shadow-red-600/30');
+        pill.classList.add('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-red-600/30');
         pill.classList.remove('bg-white/5', 'text-zinc-300');
 
         // Filter cards
@@ -681,9 +681,9 @@ const faqs = [
 
     if (btnViewDay && btnViewTable && mobileDayView && fullTableView) {
       btnViewDay.addEventListener('click', () => {
-        btnViewDay.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewDay.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
         btnViewDay.classList.remove('text-zinc-400');
-        btnViewTable.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewTable.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
         btnViewTable.classList.add('text-zinc-400');
 
         mobileDayView.classList.remove('hidden');
@@ -691,9 +691,9 @@ const faqs = [
       });
 
       btnViewTable.addEventListener('click', () => {
-        btnViewTable.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewTable.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
         btnViewTable.classList.remove('text-zinc-400');
-        btnViewDay.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        btnViewDay.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
         btnViewDay.classList.add('text-zinc-400');
 
         fullTableView.classList.remove('hidden');
@@ -712,10 +712,10 @@ const faqs = [
 
         // Update tab button styles
         dayTabBtns.forEach(t => {
-          t.classList.remove('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+          t.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
           t.classList.add('text-zinc-400');
         });
-        tab.classList.add('bg-red-600', 'text-white', 'font-black', 'shadow-md');
+        tab.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
         tab.classList.remove('text-zinc-400');
 
         // Show target panel
