@@ -18,7 +18,7 @@
       "hero.badge2": "📍 Alicante · C/ de Perú, 14 (Planta G)",
       "hero.titlePre": "CLUB DEPORTIVO",
       "hero.titleSuffix": "JUDO OLÍMPICO &",
-      "hero.subtitle": "El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto a los maestros de BJJ <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) y <strong>Luis Planelles</strong> en Alicante.",
+      "hero.subtitle": "El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto a los maestros de BJJ <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) y <strong class=\"text-red-400\">Luis Planelles</strong> en Alicante.",
       "hero.stripTitle": "Clases Abiertas · Todos los Niveles",
       "hero.stripDesc": "Iniciación, infantil, adultos y competición con atletas olímpicos",
       "hero.stripCta": "Ver Horarios →",
@@ -225,18 +225,18 @@
       "faqs.a6": "Estamos en la Calle de Perú, 14 (Planta G), 03008 Alicante. Una ubicación excelente, con fácil acceso, zona de aparcamiento y muy buenas conexiones de transporte público.",
 
       "footer.coachingTeam": "JUDO & BJJ · EQUIPO TÉCNICO",
-      "footer.tagline": "El nuevo templo de las artes marciales en Alicante, liderado por <strong>Salvador Cases</strong> (Olímpico París 2024), <strong>Carlos Cases</strong> (Maestro Nacional) y <strong class=\"text-red-400\">Mirco Biscarini</strong> (Campeón de Europa BJJ).",
+      "footer.tagline": "El nuevo templo de las artes marciales en Alicante, liderado por <strong>Salvador Cases</strong> (Olímpico París 2024), <strong>Carlos Cases</strong> (Maestro Nacional) y los maestros de BJJ <strong class=\"text-red-400\">Mirco Biscarini</strong> y <strong class=\"text-red-400\">Luis Planelles</strong>.",
       "footer.quote": "\"Jita Kyoei (Prosperidad mutua) · Seiryoku Zen'yo (Máxima eficacia con el mínimo esfuerzo)\"",
       "footer.navTitle": "Navegación",
       "footer.locTitle": "Ubicación & WhatsApp",
       "footer.address": "C/ de Perú, 14 (Planta G), 03008 Alicante",
       "footer.hours": "Horarios: Mañanas y Tardes (Lunes a Sábado)",
-      "footer.rights": "© 2026 Club de Judo & BJJ Chidaoba · Salvador Cases, Carlos Cases & Mirco Biscarini. Todos los derechos reservados.",
+      "footer.rights": "© 2026 Club de Judo & BJJ Chidaoba · Salvador Cases, Carlos Cases, Mirco Biscarini & Luis Planelles. Todos los derechos reservados.",
       "footer.legal": "Aviso Legal",
       "footer.privacy": "Política de Privacidad",
       "footer.keywords": "Artes Marciales Alicante",
 
-      "wa.online": "Salva, Carlos & Mirco · En línea",
+      "wa.online": "Salva, Carlos, Mirco & Luis · En línea",
       "wa.bubbleText": "👋 ¡Hola! ¿Tienes dudas sobre los horarios o clases de <strong>Judo o BJJ</strong>? Escríbenos para consultar turnos o reservar tu <strong class=\"text-white\">clase de prueba</strong> sin compromiso.",
       "wa.bubbleBtn": "Chatear por WhatsApp ahora"
     },
@@ -258,7 +258,7 @@
       "hero.badge2": "📍 Alicante · C/ de Perú, 14 (Ground Floor)",
       "hero.titlePre": "SPORTS CLUB",
       "hero.titleSuffix": "OLYMPIC JUDO &",
-      "hero.subtitle": "The premier combat and grappling center founded by brothers <strong>Salvador Cases</strong> (Paris 2024 Olympian, European Silver Medalist) and <strong>Carlos Cases</strong> (Spanish Champion & National Master), alongside BJJ masters <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) and <strong>Luis Planelles</strong> in Alicante.",
+      "hero.subtitle": "The premier combat and grappling center founded by brothers <strong>Salvador Cases</strong> (Paris 2024 Olympian, European Silver Medalist) and <strong>Carlos Cases</strong> (Spanish Champion & National Master), alongside BJJ masters <strong class=\"text-red-400\">Mirco Biscarini</strong> (@mibisjj) and <strong class=\"text-red-400\">Luis Planelles</strong> in Alicante.",
       "hero.stripTitle": "Open Classes · All Levels Welcome",
       "hero.stripDesc": "Beginners, kids, adults, and competition coached by Olympic athletes",
       "hero.stripCta": "View Timetable →",
@@ -465,18 +465,18 @@
       "faqs.a6": "We are located at Calle de Perú, 14 (Ground Floor), 03008 Alicante. A prime central location with easy parking, ground-floor accessibility, and seamless public transit connections.",
 
       "footer.coachingTeam": "JUDO & BJJ · COACHING TEAM",
-      "footer.tagline": "The premier martial arts academy in Alicante, led by <strong>Salvador Cases</strong> (Paris 2024 Olympian), <strong>Carlos Cases</strong> (National Master), and <strong class=\"text-red-400\">Mirco Biscarini</strong> (European BJJ Champion).",
+      "footer.tagline": "The premier martial arts academy in Alicante, led by <strong>Salvador Cases</strong> (Paris 2024 Olympian), <strong>Carlos Cases</strong> (National Master), and BJJ masters <strong class=\"text-red-400\">Mirco Biscarini</strong> and <strong class=\"text-red-400\">Luis Planelles</strong>.",
       "footer.quote": "\"Jita Kyoei (Mutual welfare & benefit) · Seiryoku Zen'yo (Maximum efficiency with minimum effort)\"",
       "footer.navTitle": "Navigation",
       "footer.locTitle": "Location & WhatsApp",
       "footer.address": "C/ de Perú, 14 (Ground Floor), 03008 Alicante",
       "footer.hours": "Schedules: Mornings & Evenings (Monday to Saturday)",
-      "footer.rights": "© 2026 Chidaoba Judo & BJJ Club · Salvador Cases, Carlos Cases & Mirco Biscarini. All rights reserved.",
+      "footer.rights": "© 2026 Chidaoba Judo & BJJ Club · Salvador Cases, Carlos Cases, Mirco Biscarini & Luis Planelles. All rights reserved.",
       "footer.legal": "Legal Notice",
       "footer.privacy": "Privacy Policy",
       "footer.keywords": "Martial Arts Alicante",
 
-      "wa.online": "Salva, Carlos & Mirco · Online",
+      "wa.online": "Salva, Carlos, Mirco & Luis · Online",
       "wa.bubbleText": "👋 Hello! Have questions about schedules or classes in <strong>Judo or BJJ</strong>? Text us on WhatsApp to inquire or book your <strong class=\"text-white\">free trial class</strong> without commitment.",
       "wa.bubbleBtn": "Chat on WhatsApp Now"
     }
@@ -601,16 +601,16 @@
 
   const waMessages = {
     es: {
-      hero: "¡Hola Salva, Carlos y Mirco! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.",
-      banner: "¡Hola Salva, Carlos y Mirco! Quiero reservar mi PRIMERA CLASE GRATIS de Judo o BJJ en Chidaoba Alicante.",
+      hero: "¡Hola Salva, Carlos, Mirco y Luis! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.",
+      banner: "¡Hola Salva, Carlos, Mirco y Luis! Quiero reservar mi PRIMERA CLASE GRATIS de Judo o BJJ en Chidaoba Alicante.",
       nav: "¡Hola! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA y solicitar información sobre cómo empezar.",
-      waBtn: "¡Hola Salva, Carlos y Mirco! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
+      waBtn: "¡Hola Salva, Carlos, Mirco y Luis! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
     },
     en: {
-      hero: "Hello Salva, Carlos and Mirco! I would like to check the timetable and request a free trial class at CHIDAOBA Alicante.",
-      banner: "Hello Salva, Carlos and Mirco! I want to book my FIRST FREE TRIAL CLASS of Judo or BJJ at Chidaoba Alicante.",
+      hero: "Hello Salva, Carlos, Mirco and Luis! I would like to check the timetable and request a free trial class at CHIDAOBA Alicante.",
+      banner: "Hello Salva, Carlos, Mirco and Luis! I want to book my FIRST FREE TRIAL CLASS of Judo or BJJ at Chidaoba Alicante.",
       nav: "Hello! I would like to check the Judo and BJJ timetable at CHIDAOBA and get details on how to get started.",
-      waBtn: "Hello Salva, Carlos and Mirco! I would like to check the timetable for Judo and BJJ at CHIDAOBA Alicante and book a trial class."
+      waBtn: "Hello Salva, Carlos, Mirco and Luis! I would like to check the timetable for Judo and BJJ at CHIDAOBA Alicante and book a trial class."
     }
   };
 
@@ -703,7 +703,7 @@
     }
 
     // 4. Update WhatsApp booking links on every slot card (desktop table & mobile view)
-    const waPhone = "34600000000";
+    const waPhone = "34610046042";
     document.querySelectorAll('[data-wa-slot]').forEach((linkEl) => {
       const rawSlotName = linkEl.getAttribute('data-wa-slot-name') || linkEl.getAttribute('data-slot-name');
       const slotNameClean = cleanStr(rawSlotName);
@@ -752,6 +752,10 @@
     const waMainBtn = document.getElementById('wa-main-link');
     if (waMainBtn) {
       waMainBtn.href = `https://wa.me/${waPhone}?text=${encodeURIComponent(waMessages[lang].waBtn)}`;
+    }
+    const waFooter = document.getElementById('footer-wa-btn');
+    if (waFooter) {
+      waFooter.href = `https://wa.me/${waPhone}?text=${encodeURIComponent("¡Hola! Os escribo desde la web oficial de CHIDAOBA para consultar horarios y clases.")}`;
     }
 
     // 6. Update the single Toggle Button active pill state
