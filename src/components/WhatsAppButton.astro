@@ -6,8 +6,8 @@ interface Props {
 }
 
 const {
-  phone = "34600000000",
-  defaultMessage = "¡Hola Salva, Carlos y Mirco! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
+  phone = "34610046042",
+  defaultMessage = "¡Hola Salva, Carlos, Mirco y Luis! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
 } = Astro.props;
 
 const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(defaultMessage)}`;
@@ -44,7 +44,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <h5 class="text-xs font-black text-zinc-900 dark:text-white">Chidaoba Alicante</h5>
         <p class="text-[10px] text-red-600 dark:text-red-400 flex items-center gap-1 font-semibold">
           <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-          <span data-i18n="wa.online">Salva, Carlos & Mirco · En línea</span>
+          <span data-i18n="wa.online">Salva, Carlos, Mirco & Luis · En línea</span>
         </p>
       </div>
     </div>
