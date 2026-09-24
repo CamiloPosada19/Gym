@@ -3,7 +3,7 @@
 import Countdown from './Countdown.astro';
 
 const whatsappNumber = "34600000000";
-const whatsappText = encodeURIComponent("¡Hola Salva, Carlos y Mirco! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.");
+const whatsappText = encodeURIComponent("¡Hola Salva, Carlos, Mirco y Luis! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.");
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
@@ -31,6 +31,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold text-zinc-800 dark:text-white bg-zinc-100 dark:bg-black/70 border border-zinc-200 dark:border-white/20">
             <span>🥋 Salva Cases · Carlos Cases ·</span>
             <span class="text-red-500 dark:text-red-400 font-black">Mirco Biscarini</span>
+            <span>· Luis Planelles</span>
           </span>
         </div>
 
@@ -46,7 +47,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
         <!-- Subtitle -->
         <p data-i18n-html="hero.subtitle" class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-2xl leading-relaxed font-normal">
-          El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto al Campeón de Europa de BJJ <strong class="text-red-600 dark:text-red-400">Mirco Biscarini</strong> (@mibisjj) en Alicante.
+          El centro de referencia en combate y grappling de los hermanos <strong>Salvador Cases</strong> (Olímpico París 2024, Subcampeón de Europa) y <strong>Carlos Cases</strong> (Campeón de España y Maestro Nacional), junto a los maestros de BJJ <strong class="text-red-600 dark:text-red-400">Mirco Biscarini</strong> (@mibisjj) y <strong>Luis Planelles</strong> en Alicante.
         </p>
 
         <!-- Training & Level Info Strip -->
