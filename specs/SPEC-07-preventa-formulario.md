@@ -28,5 +28,5 @@
      2. Clase de Prueba Sin Compromiso — *Prueba Gratis*.
      3. Todos los Niveles Bienvenidos — *Todos los Niveles*.
      4. Seminarios & Masterclasses — *Alto Nivel*.
-     5. Zona de Fuerza & Calistenia — *Incluido*.
+     5. 2 Tatamis de Competición (100 m² + 70 m²) — *Incluido*.
      6. Descuento en Kimono / Judogi — *Descuento*.
