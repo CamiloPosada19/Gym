@@ -23,70 +23,70 @@ const initialSeconds = String(Math.floor((diffMs % (1000 * 60)) / 1000)).padStar
 const targetIsoString = targetDate.toISOString();
 ---
 
-<div class={`glass-card p-6 rounded-3xl border border-white/10 shadow-card-elevated relative overflow-hidden ${className}`}>
+<div class={`glass-card p-6 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-xl dark:shadow-card-elevated relative overflow-hidden ${className}`}>
   <!-- Decorative ambient lighting -->
-  <div class="absolute -top-24 -left-24 w-48 h-48 bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
-  <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-red-600/[0.12] rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -top-24 -left-24 w-48 h-48 bg-zinc-200/50 dark:bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-red-600/[0.08] dark:bg-red-600/[0.12] rounded-full blur-3xl pointer-events-none"></div>
 
   <div class="relative z-10 flex flex-col items-center text-center">
     <!-- Header Badge -->
-    <div data-i18n="countdown.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-widest uppercase bg-red-600/15 text-red-400 border border-red-500/30 mb-3">
+    <div data-i18n="countdown.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-widest uppercase bg-red-600/10 dark:bg-red-600/15 text-red-600 dark:text-red-400 border border-red-500/20 dark:border-red-500/30 mb-3">
       <span class="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
       CUENTA ATRÁS · APERTURA 1 DE OCTUBRE
     </div>
     
     <!-- Title -->
-    <h3 data-i18n="countdown.title" class="text-lg sm:text-xl md:text-2xl font-black text-white font-display tracking-tight mb-1.5">
+    <h3 data-i18n="countdown.title" class="text-lg sm:text-xl md:text-2xl font-black text-zinc-900 dark:text-white font-display tracking-tight mb-1.5">
       EL TATAMI ABRE SUS PUERTAS EN:
     </h3>
-    <p data-i18n="countdown.subtitle" class="text-xs text-zinc-400 max-w-md mb-5">
+    <p data-i18n="countdown.subtitle" class="text-xs text-zinc-600 dark:text-zinc-400 max-w-md mb-5">
       Estamos finalizando el acondicionamiento del nuevo dojo en Alicante para abrir el 1 de octubre. Asegura tu plaza antes del inicio de clases.
     </p>
 
     <!-- Digits Grid -->
     <div id="countdown-timer" data-target={targetIsoString} class="grid grid-cols-4 gap-2 sm:gap-3 w-full max-w-md">
       <!-- Days -->
-      <div class="flex flex-col items-center bg-[#09090C] border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-inner relative group">
-        <span id="cd-days" class="text-2xl sm:text-3xl md:text-4xl font-black text-white font-display tracking-tighter">{initialDays}</span>
-        <span data-i18n="countdown.days" class="text-[10px] font-bold text-zinc-400 tracking-wider uppercase mt-0.5">Días</span>
+      <div class="flex flex-col items-center bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-sm dark:shadow-inner relative group">
+        <span id="cd-days" class="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900 dark:text-white font-display tracking-tighter">{initialDays}</span>
+        <span data-i18n="countdown.days" class="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 tracking-wider uppercase mt-0.5">Días</span>
       </div>
 
       <!-- Hours -->
-      <div class="flex flex-col items-center bg-[#09090C] border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-inner relative group">
-        <span id="cd-hours" class="text-2xl sm:text-3xl md:text-4xl font-black text-white font-display tracking-tighter">{initialHours}</span>
-        <span data-i18n="countdown.hours" class="text-[10px] font-bold text-zinc-400 tracking-wider uppercase mt-0.5">Horas</span>
+      <div class="flex flex-col items-center bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-sm dark:shadow-inner relative group">
+        <span id="cd-hours" class="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900 dark:text-white font-display tracking-tighter">{initialHours}</span>
+        <span data-i18n="countdown.hours" class="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 tracking-wider uppercase mt-0.5">Horas</span>
       </div>
 
       <!-- Minutes -->
-      <div class="flex flex-col items-center bg-[#09090C] border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-inner relative group">
-        <span id="cd-minutes" class="text-2xl sm:text-3xl md:text-4xl font-black text-white font-display tracking-tighter">{initialMinutes}</span>
-        <span data-i18n="countdown.minutes" class="text-[10px] font-bold text-zinc-400 tracking-wider uppercase mt-0.5">Min</span>
+      <div class="flex flex-col items-center bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-sm dark:shadow-inner relative group">
+        <span id="cd-minutes" class="text-2xl sm:text-3xl md:text-4xl font-black text-zinc-900 dark:text-white font-display tracking-tighter">{initialMinutes}</span>
+        <span data-i18n="countdown.minutes" class="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 tracking-wider uppercase mt-0.5">Min</span>
       </div>
 
       <!-- Seconds -->
-      <div class="flex flex-col items-center bg-[#09090C] border border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-inner relative group">
-        <span id="cd-seconds" class="text-2xl sm:text-3xl md:text-4xl font-black text-red-500 font-display tracking-tighter">{initialSeconds}</span>
-        <span data-i18n="countdown.seconds" class="text-[10px] font-bold text-zinc-400 tracking-wider uppercase mt-0.5">Seg</span>
+      <div class="flex flex-col items-center bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 rounded-2xl p-2.5 sm:p-3 shadow-sm dark:shadow-inner relative group">
+        <span id="cd-seconds" class="text-2xl sm:text-3xl md:text-4xl font-black text-red-600 dark:text-red-500 font-display tracking-tighter">{initialSeconds}</span>
+        <span data-i18n="countdown.seconds" class="text-[10px] font-bold text-zinc-500 dark:text-zinc-400 tracking-wider uppercase mt-0.5">Seg</span>
       </div>
     </div>
 
     <!-- Progress bar & spots -->
     <div class="w-full max-w-md mt-5 space-y-1.5">
-      <div class="flex justify-between text-[11px] font-semibold text-zinc-400">
-        <span data-i18n-html="countdown.progressText">Progreso de obras e instalaciones: <strong class="text-white">88%</strong></span>
-        <span data-i18n="countdown.spotsText" class="text-red-400 font-bold">Plazas: 38/50 reservadas</span>
+      <div class="flex justify-between text-[11px] font-semibold text-zinc-600 dark:text-zinc-400">
+        <span data-i18n-html="countdown.progressText">Progreso de obras e instalaciones: <strong class="text-zinc-900 dark:text-white">88%</strong></span>
+        <span data-i18n="countdown.spotsText" class="text-red-600 dark:text-red-400 font-bold">Plazas: 38/50 reservadas</span>
       </div>
-      <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden p-0.5">
+      <div class="w-full h-2 bg-zinc-200 dark:bg-white/10 rounded-full overflow-hidden p-0.5">
         <div class="h-full bg-gradient-to-r from-red-700 via-red-600 to-red-500 rounded-full w-[76%] transition-all duration-1000"></div>
       </div>
     </div>
 
     <!-- Schedule quick link footer -->
-    <div class="w-full max-w-md pt-3 mt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-300">
+    <div class="w-full max-w-md pt-3 mt-4 border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-300">
       <span class="flex items-center gap-1.5 font-medium">
         📍 C/ de Perú, 14 (Alicante)
       </span>
-      <a href="#horarios" data-i18n="countdown.schedLink" class="font-extrabold text-red-400 hover:text-red-300 transition-colors flex items-center gap-1">
+      <a href="#horarios" data-i18n="countdown.schedLink" class="font-extrabold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center gap-1">
         Ver Horarios de Clases &rarr;
       </a>
     </div>
