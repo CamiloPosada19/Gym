@@ -3,15 +3,15 @@
 const features = [
   {
     icon: "🛡️",
-    title: "250m² Tatami Oficial Amortiguado",
-    desc: "Superficie de competición de alta densidad con cámara de absorción anti-impactos diseñada para proteger articulaciones en proyecciones y rodajes intensos.",
+    title: "Tatami Planta Baja (100 m²)",
+    desc: "100 m² de tatami oficial de competición con cámara de amortiguación anti-impactos para Judo Olímpico y BJJ.",
     titleKey: "facility.f1Title",
     descKey: "facility.f1Desc"
   },
   {
-    icon: "🏋️",
-    title: "Zona de Fuerza & Calistenia",
-    desc: "Cuerdas de trepar hasta el techo, barras olímpicas, kettlebells, racks y material para tracción y grip específico para judokas y jiu-jitseros.",
+    icon: "🥋",
+    title: "Tatami Planta Alta (70 m²)",
+    desc: "70 m² de tatami independiente en la planta superior, ideal para tecnificación, randori y grupos de combate.",
     titleKey: "facility.f2Title",
     descKey: "facility.f2Desc"
   },
@@ -45,37 +45,44 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <span data-i18n="facility.title">INSTALACIONES DISEÑADAS PARA EL</span> <span data-i18n="facility.titleHighlight" class="text-silver-gradient">ALTO NIVEL</span>
       </h2>
       <p data-i18n="facility.subtitle" class="text-base sm:text-lg text-zinc-300">
-        Ubicado en C/ de Perú, 14 (Planta G), 03008 Alicante. Más de 300 m² dedicados exclusivamente al judo, al brazilian jiu-jitsu y a la preparación física funcional.
+        Ubicado en C/ de Perú, 14 (Planta G), 03008 Alicante. Dos plantas con 170 m² de tatami homologado dedicados exclusivamente al judo y al brazilian jiu-jitsu.
       </p>
     </div>
 
-    <!-- Big Image Display -->
+    <!-- Big Video / Drone Tour Display -->
     <div class="relative rounded-3xl overflow-hidden border border-white/15 shadow-card-elevated mb-12 group">
-      <img
-        src={`${base}/images/gym_dojo_interior.jpg`}
-        alt="Interior del nuevo dojo Chidaoba en Alicante"
-        class="w-full h-80 sm:h-[480px] object-cover object-center group-hover:scale-102 transition-transform duration-700"
-      />
+      <video
+        src={`${base}/videos/recorrido_dron.mp4`}
+        poster={`${base}/images/recorrido_dron_poster.jpg`}
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        class="w-full aspect-video sm:aspect-auto sm:h-[480px] object-cover object-center group-hover:scale-102 transition-transform duration-700"
+      ></video>
       
-      <!-- Overlay details -->
-      <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/30"></div>
+      <!-- Subtle bottom gradient only behind text for legibility on desktop -->
+      <div class="hidden sm:block absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none"></div>
 
-      <div class="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4">
-        <div class="space-y-1">
+      <div class="absolute bottom-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 flex items-end justify-between pointer-events-none">
+        <!-- Desktop only details (hidden on mobile) -->
+        <div class="hidden sm:block space-y-1">
           <span data-i18n="facility.matBadge" class="px-3 py-1 rounded-full text-xs font-black bg-red-600 text-white uppercase tracking-wider shadow-md">
             TATAMI OFICIAL DE COMPETICIÓN
           </span>
           <h3 data-i18n="facility.matTitle" class="text-xl sm:text-2xl font-black text-white font-display drop-shadow-md">
-            Tatami Oficial de Competición · Zona de Fuerza & Calistenia
+            2 Tatamis Oficiales de Competición (100 m² + 70 m²)
           </h3>
           <p data-i18n="facility.matDesc" class="text-xs text-zinc-300 max-w-lg">
-            Recepción moderna, iluminación perimetral cálida, tatami continuo sin resquicios y climatización de alta potencia.
+            Dos plantas con tatamis independientes (100 m² en planta baja y 70 m² en altillo), amortiguación anti-impactos y climatización de alta potencia.
           </p>
         </div>
 
-        <div class="bg-black/90 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 text-right shrink-0">
-          <span data-i18n="facility.matStatLabel" class="text-xs text-zinc-400 uppercase tracking-wider block">Tatami</span>
-          <span data-i18n="facility.matStatValue" class="text-base font-black text-white">250 m² Amortiguado</span>
+        <!-- Tatamis Stat Badge (compact on mobile, full on desktop) -->
+        <div class="bg-black/85 backdrop-blur-md px-2.5 py-1 sm:px-5 sm:py-3 rounded-xl sm:rounded-2xl border border-white/15 text-right shrink-0 shadow-lg">
+          <span data-i18n="facility.matStatLabel" class="text-[8px] sm:text-xs text-zinc-400 uppercase tracking-wider block">Dos Tatamis</span>
+          <span data-i18n="facility.matStatValue" class="text-[11px] sm:text-base font-black text-white">100 m² + 70 m²</span>
         </div>
       </div>
     </div>
