@@ -624,7 +624,7 @@
     });
 
     // 2. Update dynamic slot names and labels across timetable (mobile cards & desktop table)
-    document.querySelectorAll('[data-slot-name]').forEach((el) => {
+    document.querySelectorAll('.slot-name-text[data-slot-name]').forEach((el) => {
       const origRaw = el.getAttribute('data-slot-name');
       const orig = cleanStr(origRaw);
       const targetMap = slotNameTranslations[lang] || slotNameTranslations.es;
@@ -677,7 +677,7 @@
     // 4. Update WhatsApp booking links on every slot card (desktop table & mobile view)
     const waPhone = "34600000000";
     document.querySelectorAll('[data-wa-slot]').forEach((linkEl) => {
-      const rawSlotName = linkEl.getAttribute('data-slot-name');
+      const rawSlotName = linkEl.getAttribute('data-wa-slot-name') || linkEl.getAttribute('data-slot-name');
       const slotNameClean = cleanStr(rawSlotName);
       const rawDay = linkEl.getAttribute('data-slot-day');
       const time = linkEl.getAttribute('data-slot-time') || '';

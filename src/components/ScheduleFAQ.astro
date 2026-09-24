@@ -120,11 +120,11 @@ const faqs = [
 ];
 ---
 
-<section id="horarios" class="py-20 md:py-28 relative bg-[#050505] border-t border-white/10 overflow-hidden">
+<section id="horarios" class="py-20 md:py-28 relative bg-[#F8F9FA] dark:bg-[#050505] border-t border-zinc-200 dark:border-white/10 overflow-hidden transition-colors duration-300">
   <div id="faq" class="absolute -top-20"></div>
 
   <!-- Ambient lighting -->
-  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-red-600/[0.07] blur-[180px] rounded-full pointer-events-none"></div>
+  <div class="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-red-600/[0.04] dark:bg-red-600/[0.07] blur-[180px] rounded-full pointer-events-none"></div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     
@@ -143,7 +143,7 @@ const faqs = [
           />
           <div class="hidden sm:block text-left">
             <span class="block text-[11px] font-black uppercase tracking-wider text-red-500 font-display">TEAM KURAMA</span>
-            <span class="block text-[10px] text-zinc-400 font-medium">BJJ Affiliate</span>
+            <span class="block text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">BJJ Affiliate</span>
           </div>
         </div>
 
@@ -157,38 +157,38 @@ const faqs = [
         <!-- Right Logo: Team Kong (Subtle) -->
         <div class="flex items-center gap-2.5 group">
           <div class="hidden sm:block text-right">
-            <span class="block text-[11px] font-black uppercase tracking-wider text-white font-display">TEAM KONG</span>
-            <span class="block text-[10px] text-zinc-400 font-medium">Jiu-Jitsu Academy</span>
+            <span class="block text-[11px] font-black uppercase tracking-wider text-zinc-800 dark:text-white font-display">TEAM KONG</span>
+            <span class="block text-[10px] text-zinc-500 dark:text-zinc-400 font-medium">Jiu-Jitsu Academy</span>
           </div>
           <img
             src={`${base}/images/logo_team_kong.png`}
             alt="Logo Team Kong Brazilian Jiu-Jitsu"
-            class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.15)] opacity-85 group-hover:opacity-100 transition-all duration-300"
+            class="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain drop-shadow-[0_0_15px_rgba(0,0,0,0.15)] dark:drop-shadow-[0_0_15px_rgba(255,255,255,0.15)] opacity-85 group-hover:opacity-100 transition-all duration-300"
             loading="lazy"
           />
         </div>
       </div>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display text-white tracking-tight uppercase">
+      <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-display text-zinc-900 dark:text-white tracking-tight uppercase">
         <span data-i18n="schedule.title">HORARIOS OFICIALES</span> <span class="text-silver-gradient">CHIDAOBA</span>
       </h2>
 
-      <p data-i18n="schedule.subtitle" class="text-sm sm:text-base md:text-lg text-zinc-300 font-medium tracking-wide">
+      <p data-i18n="schedule.subtitle" class="text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-300 font-medium tracking-wide">
         Clases de Judo Olímpico, Brazilian Jiu-Jitsu (Gi & No-Gi), Kids y Tatami Abierto de Lunes a Sábado dirigidas por Salvador Cases, Carlos Cases y Mirco Biscarini.
       </p>
 
       <!-- Affiliation Tagline matching the poster footer -->
       <div class="pt-1 flex items-center justify-center">
-        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-white/[0.03] border border-white/10 text-[11px] sm:text-xs font-bold tracking-wider text-zinc-300 uppercase">
+        <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-zinc-200/60 dark:bg-white/[0.03] border border-zinc-300 dark:border-white/10 text-[11px] sm:text-xs font-bold tracking-wider text-zinc-700 dark:text-zinc-300 uppercase">
           <span class="text-red-500 font-black">🥋</span>
           <span>Kong Jiu-Jitsu Academy · Team Kurama Affiliate</span>
         </span>
       </div>
 
       <!-- Subtitle badge: First class free -->
-      <div data-i18n-html="schedule.badgeTrial" class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-white/5 border border-white/15 text-xs text-zinc-300">
+      <div data-i18n-html="schedule.badgeTrial" class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-emerald-500/10 dark:bg-white/5 border border-emerald-500/20 dark:border-white/15 text-xs text-zinc-700 dark:text-zinc-300">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-        <strong class="text-white">Empieza hoy</strong> · Tu primera clase es 100% gratis
+        <strong class="text-zinc-900 dark:text-white">Empieza hoy</strong> · Tu primera clase es 100% gratis
       </div>
     </div>
 
@@ -198,7 +198,7 @@ const faqs = [
         type="button"
         data-filter="all"
         data-i18n="schedule.filterAll"
-        class="filter-pill active px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-black uppercase tracking-wider transition-all bg-white text-black shadow-lg shadow-white/20"
+        class="filter-pill active px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         Todas las Clases
       </button>
@@ -206,7 +206,7 @@ const faqs = [
         type="button"
         data-filter="judo"
         data-i18n="schedule.filterJudo"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         🥋 Judo Olímpico
       </button>
@@ -214,7 +214,7 @@ const faqs = [
         type="button"
         data-filter="bjj-gi"
         data-i18n="schedule.filterBjjGi"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         🥋 BJJ Gi
       </button>
@@ -222,7 +222,7 @@ const faqs = [
         type="button"
         data-filter="nogi"
         data-i18n="schedule.filterNoGi"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         🤼 No-Gi
       </button>
@@ -230,7 +230,7 @@ const faqs = [
         type="button"
         data-filter="kids"
         data-i18n="schedule.filterKids"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         👶 Judo Kids & Juniors
       </button>
@@ -238,7 +238,7 @@ const faqs = [
         type="button"
         data-filter="femenino"
         data-i18n="schedule.filterWomen"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         👩 BJJ Femenino
       </button>
@@ -246,7 +246,7 @@ const faqs = [
         type="button"
         data-filter="tatami"
         data-i18n="schedule.filterOpenMat"
-        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all bg-white/5 text-zinc-300 hover:text-white hover:bg-white/10 border border-white/15"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         ✋ Tatami Abierto
       </button>
@@ -254,7 +254,7 @@ const faqs = [
 
     <!-- Mobile View Switcher (Visible on small screens) -->
     <div class="flex sm:hidden items-center justify-center gap-2 mb-6">
-      <div class="bg-zinc-900/90 p-1 rounded-2xl border border-white/15 flex items-center shadow-inner">
+      <div class="bg-zinc-200/90 dark:bg-zinc-900/90 p-1 rounded-2xl border border-zinc-300 dark:border-white/15 flex items-center shadow-inner">
         <button
           id="btn-view-day"
           type="button"
@@ -267,7 +267,7 @@ const faqs = [
           id="btn-view-table"
           type="button"
           data-i18n="schedule.viewTable"
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-zinc-400 hover:text-white"
+          class="px-3.5 py-1.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
         >
           🗓️ Tabla Semanal
         </button>
@@ -285,15 +285,15 @@ const faqs = [
       </div>
 
       <!-- Day selector tabs -->
-      <div class="grid grid-cols-6 gap-1 mb-4 p-1 rounded-2xl bg-black/60 border border-white/15 relative z-10">
+      <div class="grid grid-cols-6 gap-1 mb-4 p-1 rounded-2xl bg-zinc-200/80 dark:bg-black/60 border border-zinc-300 dark:border-white/15 relative z-10">
         {daysData.map((d, index) => (
           <button
             type="button"
             data-day-tab={d.id}
             class={`day-tab-btn py-2 text-center rounded-xl transition-all ${
               index === 0 
-                ? 'bg-white text-black font-black shadow-md' 
-                : 'text-zinc-400 font-bold hover:text-white'
+                ? 'active bg-zinc-900 text-white dark:bg-white dark:text-black font-black shadow-md' 
+                : 'text-zinc-600 dark:text-zinc-400 font-bold hover:text-zinc-950 dark:hover:text-white'
             }`}
           >
             <span class="block text-xs uppercase tracking-tighter">{d.shortName}</span>
@@ -307,24 +307,19 @@ const faqs = [
           id={`day-panel-${d.id}`}
           class={`day-panel space-y-3 ${index === 0 ? 'block' : 'hidden'}`}
         >
-          <div class="flex items-center justify-between pb-2 border-b border-white/10">
-            <h3 class="text-xl font-black text-white uppercase font-display flex items-center gap-2">
+          <div class="flex items-center justify-between pb-2 border-b border-zinc-200 dark:border-white/10">
+            <h3 class="text-xl font-black text-zinc-900 dark:text-white uppercase font-display flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-red-600"></span>
               {d.name}
             </h3>
-            <span data-i18n="schedule.slotsCount" class="text-xs text-zinc-400">7 franjas horarias</span>
+            <span class="text-xs text-zinc-500 dark:text-zinc-400 font-semibold">{Object.values(d.slots).flat().length} clases</span>
           </div>
 
           <div class="space-y-2.5">
             {times.map(t => {
               const slots = d.slots[t as keyof typeof d.slots];
               if (!slots || slots.length === 0) {
-                return (
-                  <div class="flex items-center justify-between p-3 rounded-2xl bg-white/[0.01] border border-white/5 text-zinc-600 text-xs">
-                    <span class="font-mono font-bold">{t}</span>
-                    <span data-i18n="schedule.noClass" class="text-[11px] italic">Sin sesión programada</span>
-                  </div>
-                );
+                return null;
               }
 
               return slots.map(slot => {
@@ -336,48 +331,67 @@ const faqs = [
 
                 const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar una clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
 
+                const accentBorder = isJudo 
+                  ? 'border-l-blue-600' 
+                  : isBJJGi 
+                    ? 'border-l-red-600' 
+                    : isKids 
+                      ? 'border-l-amber-500' 
+                      : isFemenino 
+                        ? 'border-l-rose-500' 
+                        : isNoGi 
+                          ? 'border-l-zinc-700 dark:border-l-zinc-300' 
+                          : 'border-l-emerald-600';
+
+                const timeBadge = isJudo 
+                  ? 'bg-blue-600 text-white' 
+                  : isBJJGi 
+                    ? 'bg-red-600 text-white' 
+                    : isKids 
+                      ? 'bg-amber-500 text-zinc-950 font-black' 
+                      : isFemenino 
+                        ? 'bg-rose-600 text-white' 
+                        : isNoGi 
+                          ? 'bg-zinc-800 text-white dark:bg-zinc-700' 
+                          : 'bg-emerald-600 text-white';
+
+                const disciplineTag = isJudo
+                  ? { label: 'JUDO', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
+                  : isBJJGi
+                    ? { label: 'BJJ', cls: 'bg-red-100 text-red-800 dark:bg-red-950/80 dark:text-red-300 border border-red-200 dark:border-red-800/50' }
+                    : isKids
+                      ? { label: 'KIDS', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50' }
+                      : isFemenino
+                        ? { label: 'FEMENINO', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50' }
+                        : isNoGi
+                          ? { label: 'NO-GI', cls: 'bg-zinc-200 text-zinc-800 dark:bg-white/10 dark:text-zinc-200 border border-zinc-300 dark:border-white/15' }
+                          : { label: 'OPEN MAT', cls: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50' };
+
                 return (
                   <div
                     data-slot-type={slot.type}
-                    class={`schedule-card-mobile p-4 rounded-2xl flex items-center justify-between gap-3 transition-all active:ring-2 active:ring-white ${
-                      isFemenino 
-                        ? 'bg-gradient-to-r from-red-700 via-red-600 to-red-800 text-white border-2 border-red-400 shadow-lg shadow-red-600/40' 
-                        : isBJJGi
-                          ? 'bg-white text-zinc-950 font-black shadow-lg border border-white'
-                          : isJudo
-                            ? 'bg-gradient-to-r from-[#0d1e3d] to-[#081226] text-white border border-blue-400/50 shadow-md shadow-blue-950/40'
-                            : isKids
-                              ? 'bg-gradient-to-r from-[#1c1d24] to-[#12131a] text-white border border-amber-500/40 shadow-md'
-                              : isNoGi
-                                ? 'bg-zinc-900 text-white border border-white/25 shadow-md'
-                                : 'bg-white/[0.04] text-zinc-200 border border-white/15'
-                    }`}
+                    class={`schedule-card-mobile p-3.5 sm:p-4 rounded-2xl flex items-center justify-between gap-3 bg-white dark:bg-[#111116] border border-zinc-200 dark:border-white/10 border-l-4 ${accentBorder} shadow-sm hover:shadow-md transition-all active:scale-[0.99]`}
                   >
-                    <div class="flex items-center gap-3">
-                      <div class={`px-2.5 py-1.5 rounded-xl font-mono text-sm font-black ${
-                        isBJJGi 
-                          ? 'bg-black text-white' 
-                          : isFemenino 
-                            ? 'bg-black/40 text-white border border-white/30' 
-                            : isJudo
-                              ? 'bg-blue-600 text-white shadow-sm'
-                              : isKids
-                                ? 'bg-amber-600/30 text-amber-300 border border-amber-500/40'
-                                : 'bg-white/10 text-white'
-                      }`}>
+                    <div class="flex items-center gap-3 min-w-0">
+                      <!-- Time pill -->
+                      <div class={`px-2.5 py-1 rounded-xl font-mono text-xs sm:text-sm font-black shrink-0 shadow-sm ${timeBadge}`}>
                         {t}
                       </div>
 
-                      <div>
-                        <div class="flex items-center gap-1.5">
-                          <span class="text-sm">
+                      <div class="min-w-0">
+                        <div class="flex items-center gap-1.5 flex-wrap">
+                          <span class="text-sm shrink-0">
                             {slot.icon}
                           </span>
-                          <h4 data-slot-name={slot.name} class={`slot-name-text text-sm font-black tracking-wide uppercase text-zinc-950`}>
+                          <h4 data-slot-name={slot.name} class="slot-name-text text-sm font-black tracking-wide uppercase text-zinc-900 dark:text-white truncate">
                             {slot.name}
                           </h4>
+                          <!-- Discipline Tag Badge -->
+                          <span class={`text-[10px] font-black uppercase px-1.5 py-0.5 rounded-md ${disciplineTag.cls}`}>
+                            {disciplineTag.label}
+                          </span>
                         </div>
-                        <p data-slot-label={slot.label} class={`slot-label-text text-[11px] text-zinc-700 font-semibold`}>
+                        <p data-slot-label={slot.label} class="slot-label-text text-xs text-zinc-600 dark:text-zinc-400 font-medium truncate mt-0.5">
                           {slot.label}
                         </p>
                       </div>
@@ -388,22 +402,13 @@ const faqs = [
                       target="_blank"
                       rel="noopener noreferrer"
                       data-wa-slot
-                      data-slot-name={slot.name}
+                      data-wa-slot-name={slot.name}
                       data-slot-day={d.name}
                       data-slot-time={t}
-                      class={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-black uppercase transition-transform active:scale-95 ${
-                        isBJJGi 
-                          ? 'bg-red-600 text-white hover:bg-red-700 shadow-md' 
-                          : isFemenino
-                            ? 'bg-black text-white hover:bg-zinc-900 border border-white/30'
-                            : isJudo
-                              ? 'bg-white text-blue-950 hover:bg-blue-100 font-black'
-                              : isKids
-                                ? 'bg-amber-500 text-black font-black'
-                                : 'bg-white text-black hover:bg-zinc-200'
-                      }`}
+                      class="shrink-0 px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-wider bg-red-600 hover:bg-red-500 text-white shadow-sm shadow-red-600/30 active:scale-95 transition-all inline-flex items-center gap-1"
                     >
                       <span data-i18n="schedule.bookBtn">Reservar</span>
+                      <span class="text-[10px]">&rarr;</span>
                     </a>
                   </div>
                 );
@@ -417,7 +422,7 @@ const faqs = [
     <!-- DESKTOP & FULL TABLE VIEW -->
     <div id="full-table-view" class="hidden sm:block mb-12">
       <!-- Legend of Disciplines -->
-      <div class="flex flex-wrap items-center justify-between text-xs text-zinc-300 gap-3 mb-3 px-2">
+      <div class="flex flex-wrap items-center justify-between text-xs text-zinc-600 dark:text-zinc-300 gap-3 mb-3 px-2">
         <div class="flex flex-wrap items-center gap-4">
           <span class="flex items-center gap-1.5 font-semibold">
             <span class="w-3 h-3 rounded-full bg-blue-600 border border-blue-400"></span>
@@ -440,19 +445,19 @@ const faqs = [
             <span data-i18n="schedule.legendKids">Judo Kids</span>
           </span>
           <span class="flex items-center gap-1.5 font-semibold">
-            <span class="w-3 h-3 rounded-full bg-white/20 border border-white/30"></span>
+            <span class="w-3 h-3 rounded-full bg-zinc-200 dark:bg-white/20 border border-zinc-300 dark:border-white/30"></span>
             <span data-i18n="schedule.legendOpenMat">Tatami Abierto</span>
           </span>
         </div>
-        <span data-i18n="schedule.legendNotice" class="text-zinc-400 italic">Pulsa en cualquier clase para reservar por WhatsApp</span>
+        <span data-i18n="schedule.legendNotice" class="text-zinc-500 dark:text-zinc-400 italic">Pulsa en cualquier clase para reservar por WhatsApp</span>
       </div>
 
-      <div class="relative overflow-hidden rounded-3xl border border-white/15 bg-[#09090C] shadow-2xl backdrop-blur-xl">
+      <div class="relative overflow-hidden rounded-3xl border border-zinc-200 dark:border-white/15 bg-white dark:bg-[#09090C] shadow-xl dark:shadow-2xl backdrop-blur-xl">
         <!-- Subtle Watermark Logos in Table Background (Team Kurama Left, Team Kong Right) -->
-        <div class="absolute left-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.07] mix-blend-screen select-none z-0">
+        <div class="absolute left-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.05] dark:opacity-[0.07] mix-blend-multiply dark:mix-blend-screen select-none z-0">
           <img src={`${base}/images/logo_team_kurama.png`} alt="" class="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(220,38,38,0.5)]" />
         </div>
-        <div class="absolute right-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.07] mix-blend-screen select-none z-0">
+        <div class="absolute right-6 top-1/2 -translate-y-1/2 w-80 md:w-96 h-80 md:h-96 pointer-events-none opacity-[0.05] dark:opacity-[0.07] mix-blend-multiply dark:mix-blend-screen select-none z-0">
           <img src={`${base}/images/logo_team_kong.png`} alt="" class="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]" />
         </div>
 
@@ -462,12 +467,12 @@ const faqs = [
           <thead>
             <tr>
               <!-- Empty corner for time column -->
-              <th class="p-3.5 bg-black/80 border-b border-r border-white/15 w-24 text-zinc-400 text-xs font-black uppercase tracking-wider font-mono">
+              <th class="p-3.5 bg-zinc-100 dark:bg-black/80 border-b border-r border-zinc-200 dark:border-white/15 w-24 text-zinc-600 dark:text-zinc-400 text-xs font-black uppercase tracking-wider font-mono">
                 HORA
               </th>
 
               {daysData.map(d => (
-                <th class="day-table-header p-3.5 bg-gradient-to-b from-red-800 to-red-900 text-white border-b border-r border-white/15 last:border-r-0 text-sm md:text-base font-black uppercase tracking-wider font-display shadow-inner">
+                <th class="day-table-header p-3.5 bg-gradient-to-b from-red-600 to-red-700 dark:from-red-800 dark:to-red-900 text-white border-b border-r border-red-500/40 dark:border-white/15 last:border-r-0 text-sm md:text-base font-black uppercase tracking-wider font-display shadow-inner">
                   {d.name}
                 </th>
               ))}
@@ -477,10 +482,10 @@ const faqs = [
           <!-- Table Body: 7 Time Rows -->
           <tbody>
             {times.map((t) => (
-              <tr class="border-b border-white/10 last:border-b-0 hover:bg-white/[0.015] transition-colors">
+              <tr class="border-b border-zinc-200 dark:border-white/10 last:border-b-0 hover:bg-zinc-50/60 dark:hover:bg-white/[0.015] transition-colors">
                 <!-- Time Column Header -->
-                <td class="p-3 bg-black/60 border-r border-white/15 text-white font-mono font-black text-sm md:text-base tracking-tight shrink-0 shadow-sm">
-                  <div class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">
+                <td class="p-3 bg-zinc-50 dark:bg-black/60 border-r border-zinc-200 dark:border-white/15 text-zinc-900 dark:text-white font-mono font-black text-sm md:text-base tracking-tight shrink-0 shadow-sm">
+                  <div class="inline-flex items-center justify-center px-2.5 py-1 rounded-lg bg-zinc-200/60 dark:bg-white/5 border border-zinc-300 dark:border-white/10">
                     {t}
                   </div>
                 </td>
@@ -491,16 +496,16 @@ const faqs = [
                   
                   if (!slots || slots.length === 0) {
                     return (
-                      <td class="p-2 border-r border-white/10 last:border-r-0 align-middle bg-black/20">
-                        <div class="h-full min-h-[5rem] sm:min-h-[5.5rem] rounded-2xl flex items-center justify-center border border-white/[0.03] text-zinc-800 text-xs select-none">
-                          <span class="w-1.5 h-1.5 rounded-full bg-white/5"></span>
+                      <td class="p-2 border-r border-zinc-200 dark:border-white/10 last:border-r-0 align-middle bg-zinc-50/50 dark:bg-black/20">
+                        <div class="h-full min-h-[5rem] sm:min-h-[5.5rem] rounded-2xl flex items-center justify-center border border-zinc-200/50 dark:border-white/[0.03] text-zinc-300 dark:text-zinc-800 text-xs select-none">
+                          <span class="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-white/5"></span>
                         </div>
                       </td>
                     );
                   }
 
                   return (
-                    <td class="p-1.5 sm:p-2 border-r border-white/10 last:border-r-0 align-middle">
+                    <td class="p-1.5 sm:p-2 border-r border-zinc-200 dark:border-white/10 last:border-r-0 align-middle">
                       <div class="flex flex-col gap-2 h-full justify-center">
                         {slots.map(slot => {
                           const isFemenino = slot.type === 'femenino';
@@ -526,14 +531,14 @@ const faqs = [
                                 isFemenino
                                   ? 'bg-gradient-to-br from-red-600 via-red-700 to-red-900 text-white border-2 border-red-400/80 shadow-lg shadow-red-600/40 ring-1 ring-red-400'
                                   : isBJJGi
-                                    ? 'bg-white text-zinc-950 font-black shadow-lg border border-white hover:border-zinc-300'
+                                    ? 'bg-white text-zinc-950 font-black shadow-md border border-zinc-300 dark:border-white hover:border-zinc-500'
                                     : isJudo
                                       ? 'bg-gradient-to-br from-[#0c1a33] via-[#091428] to-[#040914] text-white border border-blue-400/60 shadow-md shadow-blue-950/40 hover:border-blue-300'
                                       : isKids
                                         ? 'bg-gradient-to-br from-[#1c1e29] to-[#12131a] text-white border border-amber-500/50 hover:border-amber-400 shadow-md'
                                         : isNoGi
-                                          ? 'bg-zinc-900 text-white border border-white/20 hover:border-white/40 shadow-md'
-                                          : 'bg-white/[0.04] text-zinc-200 border border-white/10 hover:border-white/25 hover:bg-white/[0.07]'
+                                          ? 'bg-zinc-900 text-white border border-zinc-700 dark:border-white/20 hover:border-zinc-500 dark:hover:border-white/40 shadow-md'
+                                          : 'bg-zinc-100 text-zinc-800 dark:bg-white/[0.04] dark:text-zinc-200 border border-zinc-200 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/25 hover:bg-zinc-200 dark:hover:bg-white/[0.07]'
                               }`}
                               title={`Reservar ${slot.name} - ${d.name} ${t}`}
                             >
@@ -612,23 +617,23 @@ const faqs = [
     <!-- Accordion FAQ -->
     <div class="max-w-4xl mx-auto space-y-4">
       <div class="text-center mb-8 space-y-2">
-        <div data-i18n="faqs.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-white/10 text-white border border-white/20">
+        <div data-i18n="faqs.badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black uppercase tracking-wider bg-red-600/10 dark:bg-white/10 text-red-600 dark:text-white border border-red-500/20 dark:border-white/20">
           RESOLVEMOS TUS DUDAS
         </div>
-        <h3 data-i18n="faqs.title" class="text-2xl sm:text-3xl font-black text-white font-display">
+        <h3 data-i18n="faqs.title" class="text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white font-display">
           Preguntas Frecuentes sobre las Clases
         </h3>
       </div>
 
       {faqs.map((faq) => (
-        <details class="glass-card rounded-2xl border border-white/10 group overflow-hidden transition-all duration-200">
-          <summary class="p-5 sm:p-6 text-base font-bold text-white cursor-pointer flex items-center justify-between gap-4 list-none select-none hover:text-red-400 transition-colors">
+        <details class="glass-card rounded-2xl border border-zinc-200 dark:border-white/10 group overflow-hidden transition-all duration-200 shadow-sm">
+          <summary class="p-5 sm:p-6 text-base font-bold text-zinc-900 dark:text-white cursor-pointer flex items-center justify-between gap-4 list-none select-none hover:text-red-600 dark:hover:text-red-400 transition-colors">
             <span data-i18n={faq.qKey}>{faq.q}</span>
-            <span class="w-6 h-6 rounded-full bg-white/5 flex items-center justify-center text-zinc-400 group-open:rotate-180 group-open:text-red-400 transition-transform shrink-0">
+            <span class="w-6 h-6 rounded-full bg-zinc-100 dark:bg-white/5 flex items-center justify-center text-zinc-600 dark:text-zinc-400 group-open:rotate-180 group-open:text-red-600 dark:group-open:text-red-400 transition-transform shrink-0">
               ▼
             </span>
           </summary>
-          <div data-i18n={faq.aKey} class="px-5 sm:px-6 pb-6 text-sm text-zinc-300 leading-relaxed border-t border-white/5 pt-4">
+          <div data-i18n={faq.aKey} class="px-5 sm:px-6 pb-6 text-sm text-zinc-600 dark:text-zinc-300 leading-relaxed border-t border-zinc-100 dark:border-white/5 pt-4">
             {faq.a}
           </div>
         </details>
@@ -650,12 +655,8 @@ const faqs = [
         const filter = pill.getAttribute('data-filter');
 
         // Update active state of pills
-        filterPills.forEach(p => {
-          p.classList.remove('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-red-600/30');
-          p.classList.add('bg-white/5', 'text-zinc-300');
-        });
-        pill.classList.add('active', 'bg-white', 'text-black', 'shadow-lg', 'shadow-red-600/30');
-        pill.classList.remove('bg-white/5', 'text-zinc-300');
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
 
         // Filter cards
         slotCards.forEach(card => {
@@ -681,20 +682,20 @@ const faqs = [
 
     if (btnViewDay && btnViewTable && mobileDayView && fullTableView) {
       btnViewDay.addEventListener('click', () => {
-        btnViewDay.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
-        btnViewDay.classList.remove('text-zinc-400');
-        btnViewTable.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
-        btnViewTable.classList.add('text-zinc-400');
+        btnViewDay.classList.add('bg-red-600', 'text-white', 'shadow-md');
+        btnViewDay.classList.remove('text-zinc-600', 'dark:text-zinc-400');
+        btnViewTable.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+        btnViewTable.classList.add('text-zinc-600', 'dark:text-zinc-400');
 
         mobileDayView.classList.remove('hidden');
         fullTableView.classList.add('hidden');
       });
 
       btnViewTable.addEventListener('click', () => {
-        btnViewTable.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
-        btnViewTable.classList.remove('text-zinc-400');
-        btnViewDay.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
-        btnViewDay.classList.add('text-zinc-400');
+        btnViewTable.classList.add('bg-red-600', 'text-white', 'shadow-md');
+        btnViewTable.classList.remove('text-zinc-600', 'dark:text-zinc-400');
+        btnViewDay.classList.remove('bg-red-600', 'text-white', 'shadow-md');
+        btnViewDay.classList.add('text-zinc-600', 'dark:text-zinc-400');
 
         fullTableView.classList.remove('hidden');
         fullTableView.classList.remove('sm:block');
@@ -712,11 +713,11 @@ const faqs = [
 
         // Update tab button styles
         dayTabBtns.forEach(t => {
-          t.classList.remove('bg-white', 'text-black', 'font-black', 'shadow-md');
-          t.classList.add('text-zinc-400');
+          t.classList.remove('active', 'bg-zinc-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-black', 'shadow-md');
+          t.classList.add('text-zinc-600', 'dark:text-zinc-400');
         });
-        tab.classList.add('bg-white', 'text-black', 'font-black', 'shadow-md');
-        tab.classList.remove('text-zinc-400');
+        tab.classList.add('active', 'bg-zinc-900', 'text-white', 'dark:bg-white', 'dark:text-black', 'font-black', 'shadow-md');
+        tab.classList.remove('text-zinc-600', 'dark:text-zinc-400');
 
         // Show target panel
         dayPanels.forEach(p => {
