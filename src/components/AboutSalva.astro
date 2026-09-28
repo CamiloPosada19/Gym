@@ -41,62 +41,62 @@ const palmaresSalva = [
 
 const palmaresCarlos = [
   {
-    title: "Campeonatos de España (Todas las categorías)",
+    title: "Entrenador Olímpico",
     titleKey: "about.carlosPalm1Title",
-    result: "Campeón de España Sub-15, Sub-17, Sub-21 y Absoluta",
-    tag: "Campeón Pleno",
+    result: "Entrenador y coach olímpico en los Juegos de París 2024",
+    tag: "París 2024",
     tagKey: "about.carlosPalm1Tag"
   },
   {
-    title: "Selección Nacional Española",
+    title: "Medallista Nacional",
     titleKey: "about.carlosPalm2Title",
-    result: "Componente del equipo nacional en torneos internacionales",
-    tag: "Internacional",
+    result: "Medallas en Campeonatos de España Sub-15, Sub-17, Sub-21 y Absoluto",
+    tag: "Todas las categorías",
     tagKey: "about.carlosPalm2Tag"
   },
   {
-    title: "Dirección Deportiva Chidaoba",
+    title: "Medallista Internacional",
     titleKey: "about.carlosPalm3Title",
-    result: "Entrenador formador de campeones nacionales y olímpicos",
-    tag: "Head Coach",
+    result: "Medallista internacional con la Selección Española en todas las categorías",
+    tag: "Todas las categorías",
     tagKey: "about.carlosPalm3Tag"
   },
   {
-    title: "Preparación Física & Fuerza",
+    title: "Dirección Deportiva",
     titleKey: "about.carlosPalm4Title",
-    result: "Especialista en biomecánica y desarrollo marcial",
-    tag: "Preparador",
+    result: "Director técnico y formador de judokas y cinturones negros",
+    tag: "Director Técnico",
     tagKey: "about.carlosPalm4Tag"
   }
 ];
 
 const palmaresMirco = [
   {
-    title: "Campeonato de Europa BJJ",
+    title: "Europe Cup BJJ 2025",
     titleKey: "about.mircoPalm1Title",
-    result: "Campeón de Europa (European Champion 2022)",
-    tag: "Oro Europeo",
+    result: "Subcampeón (Medalla de Plata Master 2 -92kg)",
+    tag: "Plata Europea",
     tagKey: "about.mircoPalm1Tag"
   },
   {
-    title: "Spain BJJ Tour 2026",
+    title: "World Cup BJJ 2025",
     titleKey: "about.mircoPalm2Title",
-    result: "Medalla de Plata (Black Belt Master Heavy)",
-    tag: "Plata Nacional",
+    result: "Medalla de Bronce (Master 1 Black Belt -92kg)",
+    tag: "Podio Mundial",
     tagKey: "about.mircoPalm2Tag"
   },
   {
-    title: "Europe Cup BJJ 2025 & World Cup 2025",
+    title: "AJP Tour Alicante 2026",
     titleKey: "about.mircoPalm3Title",
-    result: "Plata en Europe Cup & Bronce en World Cup",
-    tag: "Podio Mundial",
+    result: "Medalla de Bronce Internacional (Black Belt -85kg)",
+    tag: "Podio AJP Tour",
     tagKey: "about.mircoPalm3Tag"
   },
   {
-    title: "Spain Cup BJJ Gi 2021",
+    title: "Head Coach Team Kurama",
     titleKey: "about.mircoPalm4Title",
-    result: "1º Clasificado y Medalla de Oro",
-    tag: "Oro Copa España",
+    result: "Cinturón Negro (Faixa Preta) de Brazilian Jiu-Jitsu",
+    tag: "Faixa Preta",
     tagKey: "about.mircoPalm4Tag"
   }
 ];
@@ -227,31 +227,31 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             
             <div>
               <span data-i18n="about.carlosRole" class="text-[10px] font-black uppercase tracking-widest text-zinc-700 dark:text-zinc-300 bg-zinc-100 dark:bg-white/10 px-2.5 py-0.5 rounded border border-zinc-200 dark:border-white/20 inline-block mb-1">
-                DIRECTOR TÉCNICO · MAESTRO NACIONAL
+                DIRECTOR TÉCNICO · ENTRENADOR OLÍMPICO PARÍS 2024
               </span>
               <h3 class="text-xl sm:text-2xl font-black text-zinc-900 dark:text-white font-display">
                 Carlos Cases Roca
               </h3>
               <p data-i18n="about.carlosSubtitle" class="text-xs font-bold text-zinc-500 dark:text-zinc-400">
-                Maestro Nacional · Campeón de España
+                Entrenador Olímpico París 2024 · Medallista Nacional
               </p>
             </div>
           </div>
 
           <p data-i18n="about.carlosBio" class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed text-center sm:text-left">
-            Pilar pedagógico y hermano mayor de Salvador. Campeón de España en todas las categorías (Sub-15, Sub-17, Sub-21 y Absoluto) y formador de decenas de cinturones negros y campeones en Alicante.
+            Pilar pedagógico y hermano mayor de Salvador. Entrenador olímpico en los Juegos de París 2024 y medallista nacional en todas las categorías (Sub-15, Sub-17, Sub-21 y Absoluto), formador de decenas de cinturones negros y campeones de España.
           </p>
 
           <!-- Palmarés summary -->
           <div class="space-y-2">
             <h4 data-i18n="about.carlosSpecialties" class="text-[11px] font-black uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Especialidades:</h4>
             {palmaresCarlos.map(item => (
-              <div class="flex items-center justify-between p-2 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5 text-[11px]">
-                <div class="truncate mr-2">
-                  <span class="text-zinc-400 font-bold mr-1">•</span>
-                  <span data-i18n={item.titleKey} class="text-zinc-800 dark:text-white font-medium">{item.title}</span>
+              <div class="flex items-center justify-between px-2.5 py-1.5 rounded-xl bg-zinc-50 dark:bg-white/[0.03] border border-zinc-200 dark:border-white/5 text-[11px] gap-1">
+                <div class="flex items-center gap-1 min-w-0">
+                  <span class="text-zinc-400 font-bold shrink-0">•</span>
+                  <span data-i18n={item.titleKey} class="text-zinc-800 dark:text-white font-medium text-[10px] xl:text-[10.5px] leading-tight">{item.title}</span>
                 </div>
-                <span data-i18n={item.tagKey} class="text-zinc-500 dark:text-zinc-400 text-[10px] font-semibold shrink-0">{item.tag}</span>
+                <span data-i18n={item.tagKey} class="text-zinc-500 dark:text-zinc-400 text-[8.5px] xl:text-[9.5px] font-semibold shrink-0 tracking-tight">{item.tag}</span>
               </div>
             ))}
           </div>
@@ -305,7 +305,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
 
           <p data-i18n="about.mircoBio" class="text-xs text-zinc-600 dark:text-zinc-300 leading-relaxed text-center sm:text-left">
-            Campeón de Europa y competidor de élite en el circuito IBJJF y AJP Tour. Especialista en la enseñanza de BJJ con Gi y No-Gi Grappling, guardias de presión y sumisiones avanzadas.
+            Cinturón Negro (Faixa Preta) y fundador de Team Kurama en Alicante. Competidor activo y medallista en los circuitos internacionales AJP Tour y Europe Cup BJJ, especializado en BJJ con Gi, No-Gi Grappling y combate de suelo de alta exigencia.
           </p>
 
           <!-- Palmarés summary -->
@@ -399,17 +399,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- Real photo 1: Salva podium -->
+        <!-- Real photo 1: Carlos Cases competition throw -->
         <div class="relative rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 group shadow-md dark:shadow-lg">
           <img
-            src={`${base}/images/salva_podium_absoluto.jpg`}
-            alt="Salvador Cases en el podio de campeon de España"
+            src={`${base}/images/carlos_competition_throw.jpg`}
+            alt="Carlos Cases proyectando en combate oficial de Judo"
             class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
             <div>
-              <span data-i18n="about.badgePhoto1" class="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-white text-black font-bold">Éxito Nacional</span>
-              <p data-i18n="about.caption1" class="text-xs font-bold text-white mt-1">Salvador Cases en lo más alto del podio de España</p>
+              <span data-i18n="about.badgePhoto1" class="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-white text-black font-bold">Judo Competición</span>
+              <p data-i18n="about.caption1" class="text-xs font-bold text-white mt-1">Carlos Cases en combate oficial de Judo</p>
             </div>
           </div>
         </div>
@@ -444,17 +444,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
         </div>
 
-        <!-- Real photo 4: Chidaoba dojo training -->
+        <!-- Real photo 4: Carlos Cases Ne-Waza ground combat -->
         <div class="relative rounded-2xl overflow-hidden border border-zinc-200 dark:border-white/10 group shadow-md dark:shadow-lg">
           <img
-            src={`${base}/images/chidaoba_dojo_real.jpg`}
-            alt="Club de judo Chidaoba tatami real en Alicante"
+            src={`${base}/images/carlos_newaza_real.jpg`}
+            alt="Carlos Cases combate de judo suelo Ne-Waza"
             class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex items-end p-4">
             <div>
-              <span data-i18n="about.badgePhoto4" class="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-zinc-800 text-white border border-white/20 font-bold">Tatami Chidaoba</span>
-              <p data-i18n="about.caption4" class="text-xs font-bold text-white mt-1">Nuevo centro en C/ de Perú, 14 (Planta G)</p>
+              <span data-i18n="about.badgePhoto4" class="text-[10px] font-black uppercase px-2 py-0.5 rounded bg-white text-black font-bold">Ne-Waza · Suelo</span>
+              <p data-i18n="about.caption4" class="text-xs font-bold text-white mt-1">Carlos Cases en control y combate de suelo (Ne-Waza)</p>
             </div>
           </div>
         </div>

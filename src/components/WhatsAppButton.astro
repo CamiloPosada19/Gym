@@ -7,7 +7,7 @@ interface Props {
 
 const {
   phone = "34610046042",
-  defaultMessage = "¡Hola Salva, Carlos, Mirco y Luis! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
+  defaultMessage = "¡Hola! Quiero consultar los horarios de Judo y BJJ en CHIDAOBA Alicante y solicitar una clase de prueba."
 } = Astro.props;
 
 const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(defaultMessage)}`;
@@ -17,10 +17,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <!-- Floating WhatsApp Widget -->
 <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3 group">
   
-  <!-- Floating Callout Card / Tooltip (Desktop only) -->
+  <!-- Floating Callout Card / Tooltip (Desktop only - shows on hover) -->
   <div
     id="wa-bubble"
-    class="hidden lg:block opacity-0 translate-y-3 pointer-events-none transition-all duration-500 ease-out max-w-xs p-4 rounded-2xl bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-zinc-200 dark:border-white/15 shadow-2xl text-zinc-900 dark:text-zinc-100 relative"
+    class="hidden lg:block opacity-0 translate-y-3 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-300 ease-out max-w-xs p-4 rounded-2xl bg-white/95 dark:bg-zinc-950/95 backdrop-blur-xl border border-zinc-200 dark:border-white/15 shadow-2xl text-zinc-900 dark:text-zinc-100 relative"
   >
     <button
       id="wa-close-bubble"
@@ -44,7 +44,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         <h5 class="text-xs font-black text-zinc-900 dark:text-white">Chidaoba Alicante</h5>
         <p class="text-[10px] text-red-600 dark:text-red-400 flex items-center gap-1 font-semibold">
           <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-          <span data-i18n="wa.online">Salva, Carlos, Mirco & Luis · En línea</span>
+          <span data-i18n="wa.online">En línea</span>
         </p>
       </div>
     </div>
@@ -102,19 +102,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 </div>
 
 <script>
-  setTimeout(() => {
-    const bubble = document.getElementById('wa-bubble');
-    if (bubble) {
-      bubble.classList.remove('opacity-0', 'translate-y-3', 'pointer-events-none');
-    }
-  }, 2200);
-
   const closeBtn = document.getElementById('wa-close-bubble');
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const bubble = document.getElementById('wa-bubble');
       if (bubble) {
-        bubble.classList.add('opacity-0', 'translate-y-3', 'pointer-events-none');
+        bubble.classList.add('hidden');
       }
     });
   }
