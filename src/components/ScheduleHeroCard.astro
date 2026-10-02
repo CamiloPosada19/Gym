@@ -1,0 +1,70 @@
+---
+// src/components/ScheduleHeroCard.astro
+interface Props {
+  className?: string;
+}
+
+const { className = "" } = Astro.props;
+---
+
+<div class={`glass-card p-5 sm:p-6 rounded-3xl border border-zinc-200 dark:border-white/10 shadow-xl dark:shadow-card-elevated relative overflow-hidden transition-all duration-300 ${className}`}>
+  <!-- Decorative ambient lighting -->
+  <div class="absolute -top-24 -left-24 w-48 h-48 bg-zinc-200/50 dark:bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-red-600/[0.08] dark:bg-red-600/[0.12] rounded-full blur-3xl pointer-events-none"></div>
+
+  <div class="relative z-10 flex flex-col space-y-4">
+    <!-- Header Badge -->
+    <div class="flex items-center justify-between">
+      <div data-i18n="hero.schedBadge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-black tracking-widest uppercase bg-red-600/10 dark:bg-red-600/15 text-red-600 dark:text-red-400 border border-red-500/20 dark:border-red-500/30">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+        HORARIOS DE CLASES
+      </div>
+      <span data-i18n="hero.schedDays" class="text-xs font-bold text-zinc-500 dark:text-zinc-400">
+        Lunes a Sábado
+      </span>
+    </div>
+
+    <!-- 2 Time Slot Boxes -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <!-- Turno Mañanas -->
+      <div class="p-3.5 rounded-2xl bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 flex flex-col">
+        <div class="flex items-center justify-between mb-1">
+          <span data-i18n="hero.schedMornings" class="text-xs font-black uppercase text-zinc-900 dark:text-white tracking-wider">Turno Mañanas</span>
+          <span class="text-xs font-extrabold text-red-600 dark:text-red-400">10:00 - 12:30</span>
+        </div>
+        <p data-i18n="hero.schedMorningsDesc" class="text-[11px] text-zinc-500 dark:text-zinc-400">
+          Tatami Abierto, Gi & No-Gi
+        </p>
+      </div>
+
+      <!-- Turno Tardes & Noches -->
+      <div class="p-3.5 rounded-2xl bg-zinc-100 dark:bg-[#09090C] border border-zinc-200 dark:border-white/10 flex flex-col">
+        <div class="flex items-center justify-between mb-1">
+          <span data-i18n="hero.schedAfternoons" class="text-xs font-black uppercase text-zinc-900 dark:text-white tracking-wider">Turno Tardes</span>
+          <span class="text-xs font-extrabold text-red-600 dark:text-red-400">17:30 - 22:30</span>
+        </div>
+        <p data-i18n="hero.schedAfternoonsDesc" class="text-[11px] text-zinc-500 dark:text-zinc-400">
+          BJJ Gi, No-Gi & Femenino
+        </p>
+      </div>
+    </div>
+
+    <!-- Quick Footer -->
+    <div class="pt-3 border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-300 gap-2">
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Calle+de+Per%C3%BA+14+03008+Alicante"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 font-bold text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400 transition-colors group"
+        title="Abrir en Google Maps"
+      >
+        <span class="text-red-500 group-hover:scale-125 transition-transform">📍</span>
+        <span class="underline decoration-red-500/30 underline-offset-2 group-hover:decoration-red-500">C/ de Perú, 14 (Alicante)</span>
+        <span class="text-[9px] font-black uppercase text-red-600 dark:text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 group-hover:bg-red-600 group-hover:text-white transition-all whitespace-nowrap" data-i18n="countdown.mapLink">Mapa ↗</span>
+      </a>
+      <a href="#horarios" data-i18n="hero.schedFullGrid" class="font-extrabold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center gap-1 shrink-0">
+        Ver parrilla completa &rarr;
+      </a>
+    </div>
+  </div>
+</div>
