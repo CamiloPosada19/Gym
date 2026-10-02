@@ -58,7 +58,16 @@ const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
         <ul class="space-y-2.5 text-xs">
           <li class="flex items-start gap-2">
             <span class="text-red-500 shrink-0">📍</span>
-            <span data-i18n="footer.address">C/ de Perú, 14 (Planta G), 03008 Alicante</span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Calle+de+Per%C3%BA+14+03008+Alicante"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-white hover:underline transition-colors flex items-center gap-1 font-medium"
+              title="Abrir en Google Maps"
+            >
+              <span data-i18n="footer.address">C/ de Perú, 14 (Planta G), 03008 Alicante</span>
+              <span class="text-[10px] text-red-500">↗</span>
+            </a>
           </li>
           <li class="flex items-center gap-2">
             <span>🥋</span>

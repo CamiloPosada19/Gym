@@ -82,11 +82,19 @@ const targetIsoString = targetDate.toISOString();
     </div>
 
     <!-- Schedule quick link footer -->
-    <div class="w-full max-w-md pt-3 mt-4 border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-300">
-      <span class="flex items-center gap-1.5 font-medium">
-        📍 C/ de Perú, 14 (Alicante)
-      </span>
-      <a href="#horarios" data-i18n="countdown.schedLink" class="font-extrabold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center gap-1">
+    <div class="w-full max-w-md pt-3 mt-4 border-t border-zinc-200 dark:border-white/10 flex items-center justify-between text-xs text-zinc-600 dark:text-zinc-300 gap-2">
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Calle+de+Per%C3%BA+14+03008+Alicante"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-1.5 font-bold text-zinc-700 dark:text-zinc-300 hover:text-red-600 dark:hover:text-red-400 transition-colors group"
+        title="Abrir en Google Maps"
+      >
+        <span class="text-red-500 group-hover:scale-125 transition-transform">📍</span>
+        <span class="underline decoration-red-500/30 underline-offset-2 group-hover:decoration-red-500">C/ de Perú, 14 (Alicante)</span>
+        <span class="text-[9px] font-black uppercase text-red-600 dark:text-red-400 bg-red-500/10 px-1.5 py-0.5 rounded border border-red-500/20 group-hover:bg-red-600 group-hover:text-white transition-all whitespace-nowrap" data-i18n="countdown.mapLink">Mapa ↗</span>
+      </a>
+      <a href="#horarios" data-i18n="countdown.schedLink" class="font-extrabold text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 transition-colors flex items-center gap-1 shrink-0">
         Ver Horarios de Clases &rarr;
       </a>
     </div>
