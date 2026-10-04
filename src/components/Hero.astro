@@ -3,10 +3,11 @@
 import Countdown from './Countdown.astro';
 import ScheduleHeroCard from './ScheduleHeroCard.astro';
 
-// Interruptor de visualización (cambiar a false el domingo para ocultar cuenta atrás y obras):
-// true  = Muestra el temporizador de cuenta atrás, barra de obras y plazas (fase preventa)
-// false = Oculta el contador y muestra el resumen rápido de horarios de clase (SPEC-03)
-const showCountdown = true;
+// Interruptores de visualización:
+// showCountdown: Muestra el temporizador de cuenta atrás, barra de obras y plazas
+// showScheduleCard: Muestra la tarjeta rápida de horarios de clase
+const showCountdown = false;
+const showScheduleCard = false;
 
 const whatsappNumber = "34610046042";
 const whatsappText = encodeURIComponent("¡Hola! Quiero consultar los horarios y solicitar una clase de prueba en CHIDAOBA Alicante.");
@@ -144,7 +145,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           <img
             src={`${base}/images/salva_paris_2024.jpg`}
             alt="Salvador Cases en los Juegos Olímpicos de París 2024 (ESP CASES ROCA)"
-            class="w-full h-80 sm:h-96 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+            class={`w-full ${showCountdown || showScheduleCard ? 'h-80 sm:h-96' : 'h-80 sm:h-96 lg:h-[480px]'} object-cover object-top group-hover:scale-105 transition-transform duration-700`}
             loading="eager"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-black/40"></div>
@@ -174,8 +175,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           </div>
         </div>
 
-        <!-- Live Countdown Timer Card / Schedule Card (conmutable el domingo) -->
-        {showCountdown ? <Countdown /> : <ScheduleHeroCard />}
+        <!-- Live Countdown Timer Card / Schedule Card -->
+        {showCountdown && <Countdown />}
+        {showScheduleCard && <ScheduleHeroCard />}
       </div>
 
     </div>
