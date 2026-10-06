@@ -31,7 +31,10 @@ const daysData = [
         { name: "BJJ", type: "femenino", label: "Femenino (T1)", icon: "👩" },
         { name: "BJJ", type: "kids", label: "Kids 5-11 (T2)", icon: "👶" }
       ],
-      "19:00": [{ name: "BJJ", type: "bjj-gi", label: "Todos Niveles (T2)", icon: "🥋" }]
+      "19:00": [
+        { name: "KICK BOXING", type: "kickboxing", label: "Todos Niveles (T1)", icon: "🥊" },
+        { name: "BJJ", type: "bjj-gi", label: "Todos Niveles (T2)", icon: "🥋" }
+      ]
     }
   },
   {
@@ -55,7 +58,10 @@ const daysData = [
       "09:30": [{ name: "BJJ", type: "tatami", label: "Open Matt (T1)", icon: "✋" }],
       "15:00": [{ name: "BJJ", type: "bjj-gi", label: "Todos Niveles (T1)", icon: "🥋" }],
       "18:00": [{ name: "BJJ", type: "kids", label: "Kids 5-11 (T2)", icon: "👶" }],
-      "19:00": [{ name: "GRAP NOGI", type: "nogi", label: "Todos Niveles (T2)", icon: "🤼" }]
+      "19:00": [
+        { name: "KICK BOXING", type: "kickboxing", label: "Todos Niveles (T1)", icon: "🥊" },
+        { name: "GRAP NOGI", type: "nogi", label: "Todos Niveles (T2)", icon: "🤼" }
+      ]
     }
   },
   {
@@ -89,7 +95,7 @@ const faqs = [
   },
   {
     q: "¿Cuáles son los horarios de las clases y cómo puedo empezar?",
-    a: "Ofrecemos clases distribuidas en turnos de mañana (09:30 Tatami Abierto y 10:00 Judo Olímpico / BJJ Gi / No-Gi), mediodía (15:00 BJJ), tarde para niños y jóvenes (17:30 y 18:30 Judo Kids & Juniors y BJJ Femenino) y noche para adultos y competición (19:30 y 20:45 Judo Olímpico y No-Gi). ¡Tu primera clase de prueba es 100% gratis! Escríbenos por WhatsApp para reservar tu hueco en el horario que prefieras.",
+    a: "Ofrecemos clases distribuidas en turnos de mañana (09:30 Tatami Abierto y 10:00 Judo Olímpico / BJJ Gi / No-Gi), mediodía (15:00 BJJ), tarde para niños y jóvenes (17:30 y 18:30 Judo Kids & Juniors y BJJ Femenino) y noche para adultos y competición (19:00 Kick Boxing, BJJ y No-Gi, 19:30 y 20:45 Judo Olímpico y No-Gi). ¡Tu primera clase de prueba es 100% gratis! Escríbenos por WhatsApp para reservar tu hueco en el horario que prefieras.",
     qKey: "faqs.q2",
     aKey: "faqs.a2"
   },
@@ -174,7 +180,7 @@ const faqs = [
       </h2>
 
       <p data-i18n="schedule.subtitle" class="text-sm sm:text-base md:text-lg text-zinc-600 dark:text-zinc-300 font-medium tracking-wide">
-        Clases de Judo Olímpico, Brazilian Jiu-Jitsu (Gi & No-Gi), Kids y Tatami Abierto de Lunes a Sábado dirigidas por Salvador Cases, Carlos Cases y Mirco Biscarini.
+        Clases de Judo Olímpico, Brazilian Jiu-Jitsu (Gi & No-Gi), Kick Boxing, Kids y Tatami Abierto de Lunes a Sábado dirigidas por Salvador Cases, Carlos Cases y Mirco Biscarini.
       </p>
 
       <!-- Affiliation Tagline matching the poster footer -->
@@ -241,6 +247,14 @@ const faqs = [
         class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
       >
         👩 BJJ Femenino
+      </button>
+      <button
+        type="button"
+        data-filter="kickboxing"
+        data-i18n="schedule.filterKickboxing"
+        class="filter-pill px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-xl text-xs sm:text-sm uppercase tracking-wider transition-all"
+      >
+        🥊 Kick Boxing
       </button>
       <button
         type="button"
@@ -328,6 +342,7 @@ const faqs = [
                 const isNoGi = slot.type === 'nogi';
                 const isJudo = slot.name === 'JUDO' || slot.type === 'judo';
                 const isKids = slot.type === 'kids';
+                const isKickboxing = slot.type === 'kickboxing';
 
                 const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar una clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
 
@@ -335,25 +350,29 @@ const faqs = [
                   ? 'border-l-blue-600' 
                   : isBJJGi 
                     ? 'border-l-red-600' 
-                    : isKids 
-                      ? 'border-l-amber-500' 
-                      : isFemenino 
-                        ? 'border-l-rose-500' 
-                        : isNoGi 
-                          ? 'border-l-zinc-700 dark:border-l-zinc-300' 
-                          : 'border-l-emerald-600';
+                    : isKickboxing
+                      ? 'border-l-orange-500'
+                      : isKids 
+                        ? 'border-l-amber-500' 
+                        : isFemenino 
+                          ? 'border-l-rose-500' 
+                          : isNoGi 
+                            ? 'border-l-zinc-700 dark:border-l-zinc-300' 
+                            : 'border-l-emerald-600';
 
                 const timeBadge = isJudo 
                   ? 'bg-blue-600 text-white' 
                   : isBJJGi 
                     ? 'bg-red-600 text-white' 
-                    : isKids 
-                      ? 'bg-amber-500 text-zinc-950 font-black' 
-                      : isFemenino 
-                        ? 'bg-rose-600 text-white' 
-                        : isNoGi 
-                          ? 'bg-zinc-800 text-white dark:bg-zinc-700' 
-                          : 'bg-emerald-600 text-white';
+                    : isKickboxing
+                      ? 'bg-orange-500 text-white'
+                      : isKids 
+                        ? 'bg-amber-500 text-zinc-950 font-black' 
+                        : isFemenino 
+                          ? 'bg-rose-600 text-white' 
+                          : isNoGi 
+                            ? 'bg-zinc-800 text-white dark:bg-zinc-700' 
+                            : 'bg-emerald-600 text-white';
 
                 const disciplineTag = isJudo && isKids
                   ? { label: 'JUDO KIDS', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
@@ -361,13 +380,15 @@ const faqs = [
                     ? { label: 'JUDO', cls: 'bg-blue-100 text-blue-800 dark:bg-blue-950/80 dark:text-blue-300 border border-blue-200 dark:border-blue-800/50' }
                     : isBJJGi
                       ? { label: 'BJJ', cls: 'bg-red-100 text-red-800 dark:bg-red-950/80 dark:text-red-300 border border-red-200 dark:border-red-800/50' }
-                      : isKids
-                        ? { label: 'BJJ KIDS', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50' }
-                        : isFemenino
-                          ? { label: 'FEMENINO', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50' }
-                          : isNoGi
-                            ? { label: 'NO-GI', cls: 'bg-zinc-200 text-zinc-800 dark:bg-white/10 dark:text-zinc-200 border border-zinc-300 dark:border-white/15' }
-                            : { label: 'OPEN MAT', cls: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50' };
+                      : isKickboxing
+                        ? { label: 'KICK BOXING', cls: 'bg-orange-100 text-orange-900 dark:bg-orange-950/80 dark:text-orange-300 border border-orange-200 dark:border-orange-800/50' }
+                        : isKids
+                          ? { label: 'BJJ KIDS', cls: 'bg-amber-100 text-amber-900 dark:bg-amber-950/80 dark:text-amber-300 border border-amber-200 dark:border-amber-800/50' }
+                          : isFemenino
+                            ? { label: 'FEMENINO', cls: 'bg-rose-100 text-rose-800 dark:bg-rose-950/80 dark:text-rose-300 border border-rose-200 dark:border-rose-800/50' }
+                            : isNoGi
+                              ? { label: 'NO-GI', cls: 'bg-zinc-200 text-zinc-800 dark:bg-white/10 dark:text-zinc-200 border border-zinc-300 dark:border-white/15' }
+                              : { label: 'OPEN MAT', cls: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800/50' };
 
                 return (
                   <div
@@ -445,6 +466,10 @@ const faqs = [
             <span data-i18n="schedule.legendWomen">BJJ Femenino</span>
           </span>
           <span class="flex items-center gap-1.5 font-semibold">
+            <span class="w-3 h-3 rounded-full bg-orange-500 border border-orange-400"></span>
+            <span data-i18n="schedule.legendKickboxing">Kick Boxing</span>
+          </span>
+          <span class="flex items-center gap-1.5 font-semibold">
             <span class="w-3 h-3 rounded-full bg-amber-500 border border-amber-400"></span>
             <span data-i18n="schedule.legendKids">Judo Kids</span>
           </span>
@@ -518,6 +543,7 @@ const faqs = [
                           const isJudo = slot.name === 'JUDO' || slot.type === 'judo';
                           const isKids = slot.type === 'kids';
                           const isTatami = slot.type === 'tatami';
+                          const isKickboxing = slot.type === 'kickboxing';
 
                           const waSlotMsg = encodeURIComponent(`¡Hola! Quiero reservar mi clase gratis de ${slot.name} (${d.name} a las ${t}) en Chidaoba Alicante.`);
 
@@ -537,13 +563,15 @@ const faqs = [
                                   ? 'bg-gradient-to-br from-red-600 via-red-700 to-red-900 text-white border-2 border-red-400/80 shadow-lg shadow-red-600/40 ring-1 ring-red-400'
                                   : isBJJGi
                                     ? 'bg-white text-zinc-950 font-black shadow-md border border-zinc-300 dark:border-white hover:border-zinc-500'
-                                    : isJudo
-                                      ? 'bg-gradient-to-br from-[#0c1a33] via-[#091428] to-[#040914] text-white border border-blue-400/60 shadow-md shadow-blue-950/40 hover:border-blue-300'
-                                      : isKids
-                                        ? 'bg-gradient-to-br from-[#1c1e29] to-[#12131a] text-white border border-amber-500/50 hover:border-amber-400 shadow-md'
-                                        : isNoGi
-                                          ? 'bg-zinc-900 text-white border border-zinc-700 dark:border-white/20 hover:border-zinc-500 dark:hover:border-white/40 shadow-md'
-                                          : 'bg-zinc-100 text-zinc-800 dark:bg-white/[0.04] dark:text-zinc-200 border border-zinc-200 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/25 hover:bg-zinc-200 dark:hover:bg-white/[0.07]'
+                                    : isKickboxing
+                                      ? 'bg-gradient-to-br from-orange-600 via-orange-700 to-amber-800 text-white border border-orange-400/70 shadow-md shadow-orange-950/40 hover:border-orange-300'
+                                      : isJudo
+                                        ? 'bg-gradient-to-br from-[#0c1a33] via-[#091428] to-[#040914] text-white border border-blue-400/60 shadow-md shadow-blue-950/40 hover:border-blue-300'
+                                        : isKids
+                                          ? 'bg-gradient-to-br from-[#1c1e29] to-[#12131a] text-white border border-amber-500/50 hover:border-amber-400 shadow-md'
+                                          : isNoGi
+                                            ? 'bg-zinc-900 text-white border border-zinc-700 dark:border-white/20 hover:border-zinc-500 dark:hover:border-white/40 shadow-md'
+                                            : 'bg-zinc-100 text-zinc-800 dark:bg-white/[0.04] dark:text-zinc-200 border border-zinc-200 dark:border-white/10 hover:border-zinc-400 dark:hover:border-white/25 hover:bg-zinc-200 dark:hover:bg-white/[0.07]'
                               }`}
                               title={`Reservar ${slot.name} - ${d.name} ${t}`}
                             >
@@ -554,21 +582,21 @@ const faqs = [
 
                               <!-- Class Name -->
                               <span data-slot-name={slot.name} class={`slot-name-text text-[11px] sm:text-xs font-black leading-tight tracking-wider uppercase block ${
-                                isBJJGi ? 'text-zinc-950' : isJudo ? 'text-blue-100' : isKids ? 'text-amber-200' : 'text-white'
+                                isBJJGi ? 'text-zinc-950' : isJudo ? 'text-blue-100' : isKids ? 'text-amber-200' : isKickboxing ? 'text-orange-100' : 'text-white'
                               }`}>
                                 {slot.name}
                               </span>
 
                               <!-- Subtle subtitle label -->
                               <span data-slot-label={slot.label} class={`slot-label-text text-[9px] truncate max-w-[95px] block ${
-                                isBJJGi ? 'text-zinc-600 font-semibold' : (isJudo && isKids ? 'text-amber-300 font-semibold' : 'text-zinc-400')
+                                isBJJGi ? 'text-zinc-600 font-semibold' : (isJudo && isKids ? 'text-amber-300 font-semibold' : isKickboxing ? 'text-orange-200 font-medium' : 'text-zinc-400')
                               }`}>
                                 {slot.label}
                               </span>
 
                               <!-- Subtle hover prompt -->
                               <span class={`text-[8px] font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity ${
-                                isBJJGi ? 'text-red-700' : 'text-red-400'
+                                isBJJGi ? 'text-red-700' : isKickboxing ? 'text-amber-200' : 'text-red-400'
                               }`}>
                                 <span data-i18n="schedule.hoverBook">Reservar &rarr;</span>
                               </span>
@@ -683,6 +711,8 @@ const faqs = [
             isMatch = types.includes('nogi') || slotName.includes('NOGI');
           } else if (filter === 'femenino') {
             isMatch = types.includes('femenino') || slotLabel.includes('femenino');
+          } else if (filter === 'kickboxing') {
+            isMatch = types.includes('kickboxing') || slotName.includes('KICK');
           } else if (filter === 'tatami') {
             isMatch = types.includes('tatami');
           } else {
